@@ -1,16 +1,9 @@
-import {
-  ArrowDown,
-  Braces,
-  Brackets,
-  ChevronDown,
-  CodeXml,
-  Parentheses,
-} from "lucide-react";
+import { Braces, Brackets, CodeXml, Parentheses } from "lucide-react";
 import { HomeSpan } from "../HomeSpan";
 
 export function HomeSection() {
   return (
-    <section className="py-32 relative bg-[#09090B]">
+    <section className="py-32 px-4 relative bg-[#09090B]">
       <div
         className="absolute inset-0 z-0
         bg-[radial-gradient(#111113_1px,transparent_1px)]
@@ -40,14 +33,14 @@ export function HomeSection() {
           <p className="text-xl font-inter mt-8 mb-2 font-medium  text-[#888891] ">
             Olá, eu sou
           </p>
-          <h1 className="text-8xl mb-6 font-bold font-poppins bg-gradient-to-r from-[#8A4EEE] to-[#D35EED] bg-clip-text text-transparent">
+          <h1 className="md:text-8xl text-6xl mb-6 font-bold font-poppins bg-gradient-to-r from-[#8A4EEE] to-[#D35EED] bg-clip-text text-transparent">
             Kauan Moura
           </h1>
 
           <span className="mb-6 text-[#894eef] font-brains ">
             // Especializado em Landing Pages
           </span>
-          <p className="text-lg mb-10 text-[#888891] font-medium font-inter">
+          <p className="md:text-lg mb-10 text-[#888891] font-medium font-inter">
             Transformo ideias em landing pages funcionais e elegantes. Foco em
             código limpo, design minimalista e páginas que realmente convertem.
           </p>
