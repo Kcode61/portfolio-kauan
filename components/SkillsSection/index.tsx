@@ -26,7 +26,7 @@ export function SkillsSection() {
     },
   ];
   return (
-    <section className="py-16">
+    <section id="Habilidades" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl flex flex-col gap-4 mx-auto text-center">
           <span className=" font-brains text-sm text-[#894eef] ">
@@ -82,7 +82,7 @@ export function SkillsSection() {
             {"stack.current()"}
           </h2>
 
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 flex-wrap justify-center items-center">
             {skills.map((skill) => (
               <span
                 key={skill.title}

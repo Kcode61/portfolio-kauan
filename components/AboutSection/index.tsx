@@ -2,7 +2,7 @@ import { Palette, Target, Zap } from "lucide-react";
 
 export function AboutSection() {
   return (
-    <section className="py-16 px-4 bg-[#09090B] ">
+    <section id="sobre" className="py-16 px-4 bg-[#09090B] ">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
           <div className="flex flex-col">

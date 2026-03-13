@@ -3,7 +3,7 @@ import { Menu, Sun } from "lucide-react";
 export function Header() {
   return (
     <>
-      <header className="bg-[#09090B] py-5 px-4 border-b border-[#17171B]">
+      <header className="bg-[#09090B] sticky top-0 z-50  py-5 px-4 border-b border-[#17171B]">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="flex">
             <span className="text-[#894EEF] text-lg font-bold">&lt;</span>

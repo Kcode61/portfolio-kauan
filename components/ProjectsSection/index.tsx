@@ -40,7 +40,7 @@ export function ProjectsSection() {
     },
   ];
   return (
-    <section className="py-16">
+    <section id="Projetos" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl flex flex-col gap-4 mx-auto text-center">
           <span className=" font-brains text-sm text-[#894eef] ">
@@ -75,7 +75,7 @@ export function ProjectsSection() {
               </div>
               <div className="p-6 flex flex-col gap-4 bg-linear-to-br from-[#151519]  to-[#101014]">
                 <span className="text-xs text-[#888891]/70 font-brains">
-                  <span className="text-[#894eef]/50">{project.id}</span> //{" "}
+                  <span className="text-[#894eef]/50">0{project.id}</span> //{" "}
                   {project.projectname}
                 </span>
                 <div className="px-4 py-5 rounded-xl bg-[#18181B] text-center ">
@@ -103,7 +103,10 @@ export function ProjectsSection() {
 
                 <div className="flex flex-wrap gap-2 items-center ">
                   {project.projectStack.map((stack) => (
-                    <span className="text-[#f2f2f2] hover:bg-[#222226]/40 transition py-1.5 px-4 rounded-full bg-[#222226] text-xs cursor-default font-brains font-bold">
+                    <span
+                      key={stack}
+                      className="text-[#f2f2f2] hover:bg-[#222226]/40 transition py-1.5 px-4 rounded-full bg-[#222226] text-xs cursor-default font-brains font-bold"
+                    >
                       {stack}
                     </span>
                   ))}
