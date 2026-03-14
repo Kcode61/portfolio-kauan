@@ -8,6 +8,12 @@ export function Header() {
   const { theme, setTheme } = useTheme();
   return (
     <>
+      {isopen && (
+        <div
+          onClick={() => setisopen(false)}
+          className="bg-black/50 inset-0 fixed z-40 w-full h-screen"
+        ></div>
+      )}
       <header className="dark:bg-[#09090B] bg-[#FAFAFA] sticky top-0 z-50  py-5 md:px-4 border-b  border-[#EFEFF1] dark:border-[#17171B]">
         <div className="max-w-6xl px-4 md:px-0 mx-auto flex justify-between items-center">
           <div className="flex">
@@ -54,7 +60,7 @@ export function Header() {
 
           <button
             onClick={() => setisopen(!isopen)}
-            className="text-white flex md:hidden p-2 rounded-full cursor-pointer transition-all ease-duration-300 hover:scale-95 duration-300  hover:bg-[#222226] "
+            className="dark:text-white text-[#17171c] flex md:hidden p-2 rounded-full cursor-pointer transition-all ease-duration-300 hover:scale-95 duration-300  hover:bg-[#222226] "
           >
             {isopen ? <X /> : <Menu />}
           </button>
@@ -62,7 +68,7 @@ export function Header() {
         <nav
           className={`${
             isopen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          } overflow-hidden absolute bg-[#09090B] p-5 top-full left-0 w-full z-50 transition-all duration-300 ease flex border-t border-[#17171B] flex-col gap-6`}
+          } overflow-hidden absolute bg-white dark:bg-[#09090B] p-5 top-full left-0 w-full z-50 transition-all duration-300 ease flex border-t border-[#F1F1F3] dark:border-[#17171B] flex-col gap-6`}
         >
           <a
             href="#Sobre"
@@ -91,15 +97,17 @@ export function Header() {
 
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="text-[#888891] flex gap-2 items-center font-poppins text-sm  "
+            className="text-[#888891]"
           >
             {theme === "dark" ? (
-              <div>
-                <Moon size={18} color="white" /> "Modo Dark"
+              <div className="flex gap-2  font-poppins text-sm font-medium  items-center">
+                <Moon size={18} className="text-[#17171c] dark:text-white" />
+                Modo Dark
               </div>
             ) : (
-              <div>
-                <Sun size={18} color="white" /> "Modo claro"
+              <div className="flex gap-2  font-poppins text-sm  font-medium items-center">
+                <Sun size={18} className="text-[#17171c] dark:text-white" />
+                Modo claro
               </div>
             )}
           </button>
