@@ -38,6 +38,20 @@ export function ProjectsSection() {
         "React-Router",
       ],
     },
+    {
+      id: 4,
+      projectname: "Pamofocus",
+      projectDescription: "Pamofocus - pamodoro baseado na técnica Pomodoro",
+      projectLink: "https://pamofocus.pages.dev",
+      projectStack: [
+        "Html",
+        "React",
+        "Tailwind",
+        "Typescript",
+        "Zustand",
+        "Next.js",
+      ],
+    },
   ];
   return (
     <section id="Projetos" className="py-16 px-4">
