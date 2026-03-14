@@ -3,10 +3,11 @@ import { HomeSpan } from "../HomeSpan";
 
 export function HomeSection() {
   return (
-    <section className="py-32 px-4 relative bg-[#09090B]">
+    <section className="py-32 px-4 relative bg-[#FAFAFA] dark:bg-[#09090B]">
       <div
         className="absolute inset-0 z-0
-        bg-[radial-gradient(#111113_1px,transparent_1px)]
+           bg-[radial-gradient(#EFEFF0_1px,transparent_1px)]
+        dark:bg-[radial-gradient(#111113_1px,transparent_1px)]
         [background-size:22px_22px]"
       />
       <div className="absolute inset-0 pointer-events-none">
@@ -49,7 +50,7 @@ export function HomeSection() {
             <button className="py-3 px-8 font-inter shadow-[0px_0px_17px_#894eef] cursor-pointer hover:bg-[#894eef]/90 hover:scale-95 transition ease duration-300 rounded-full bg-[#894eef] text-white font-inter text-sm font-bold">
               Entre em contato
             </button>
-            <button className="py-3 font-inter px-8 hover:bg-[#894eef] hover:border-[#894eef]  cursor-pointer   transition ease duration-300 border border-[#26262b] rounded-full bg-[#09090b] text-white font-inter text-sm font-bold">
+            <button className="py-3 font-inter px-8 hover:bg-[#894eef] hover:border-[#894eef]  cursor-pointer   transition ease duration-300 border border-[#E5E5E8] dark:border-[#26262b] rounded-full bg-[#FAFAFA] dark:bg-[#09090b] hover:text-white text-[#17171c] dark:text-white font-inter text-sm font-bold">
               Ver projetos
             </button>
           </div>

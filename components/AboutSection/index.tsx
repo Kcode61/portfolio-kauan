@@ -2,14 +2,14 @@ import { Palette, Target, Zap } from "lucide-react";
 
 export function AboutSection() {
   return (
-    <section id="sobre" className="py-16 px-4 bg-[#09090B] ">
+    <section id="sobre" className="py-16 px-4 bg-[#F8F7FA] dark:bg-[#09090B] ">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
           <div className="flex flex-col">
             <span className=" font-brains text-sm text-[#894eef] ">
               {"<Sobre />"}
             </span>
-            <h2 className="font-poppins mt-4 mb-6 font-bold text-white text-4xl ">
+            <h2 className="font-poppins mt-4 mb-6 font-bold text-black dark:text-white text-4xl ">
               Sobre mim
             </h2>
             <div className="space-y-5">
@@ -26,7 +26,7 @@ export function AboutSection() {
                 Trabalho com HTML, CSS, Tailwind, JavaScript, TypeScript, React
                 e Next.js. O importante é entregar resultado.
               </p>
-              <div className="p-3 rounded-xl mt-4 bg-[#101014] border border-[#1B1B20] flex flex-col gap-2">
+              <div className="p-3 rounded-xl mt-4 bg-[#FFFFFF] dark:bg-[#101014] border border-[#e4e4e7] dark:border-[#1B1B20] flex flex-col gap-2">
                 <div className="flex gap-2 items-center">
                   <div className="w-3 h-3 rounded-full bg-[#EF4343]"></div>
                   <div className="w-3 h-3 rounded-full bg-[#FACC14]"></div>
@@ -35,8 +35,10 @@ export function AboutSection() {
                 <div className="font-brains">
                   <span className="text-[12px] text-[#894eef]">const </span>
                   <span className="text-[12px] text-[#a87ef1]">developer </span>
-                  <span className="text-[12px] text-[#f2f2f2]">{"= {"}</span>
-                  <div className="pl-4 text-[#f2f2f2]">
+                  <span className="text-[12px] text-[#17171c] dark:text-[#f2f2f2]">
+                    {"= {"}
+                  </span>
+                  <div className="pl-4 text-[#17171c] dark:text-[#f2f2f2]">
                     <span className="text-[12px] text-[#888891] ">Nome:</span>{" "}
                     <span className="text-[12px] text-[#21c45d]">
                       "Kauan Moura"
@@ -57,20 +59,21 @@ export function AboutSection() {
                     <span className="text-[12px] text-[#21c45d]">
                       "Converter visitantes"
                     </span>
-                    ,
                   </div>
-                  <span className="text-[12px] text-[#f2f2f2]">{"}"}</span>
+                  <span className="text-[12px] text-[#17171c] dark:text-[#f2f2f2]">
+                    {"}"}
+                  </span>
                 </div>
               </div>
             </div>
           </div>
           <div className="flex flex-col gap-8">
-            <div className="p-6 rounded-xl  bg-[#101014] border border-[#1B1B20] hover:border-[#894eef]/20 hover:scale-95 transition ease duration-300 group flex gap-4">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#894eef] group-hover:bg-[#894eef]/20 bg-[#1C1629] ">
+            <div className="p-6 rounded-xl  bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] hover:border-[#894eef]/20 hover:scale-95 transition ease duration-300 group flex gap-4">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#894eef] group-hover:bg-[#894eef]/20 bg-[#F2EBFD]  dark:bg-[#1C1629] ">
                 <Target />
               </div>
               <div className="flex flex-col gap-1">
-                <h2 className="text-[#f2f2f2] font-brains font-bold ">
+                <h2 className="text-[#17171c] dark:text-[#f2f2f2] font-brains font-bold ">
                   Foco em resultado
                 </h2>
                 <p className="text-[#888891] fontt-inter text-sm ">
@@ -78,12 +81,12 @@ export function AboutSection() {
                 </p>
               </div>
             </div>
-            <div className="p-6 rounded-xl  bg-[#101014] border border-[#1B1B20] hover:border-[#894eef]/20 hover:scale-95 transition ease duration-300 group flex gap-4">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#894eef] group-hover:bg-[#894eef]/20 bg-[#1C1629] ">
+            <div className="p-6 rounded-xl   bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] hover:border-[#894eef]/20 hover:scale-95 transition ease duration-300 group flex gap-4">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#894eef] group-hover:bg-[#894eef]/20 bg-[#F2EBFD]  dark:bg-[#1C1629] ">
                 <Zap />
               </div>
               <div className="flex flex-col gap-1">
-                <h2 className="text-[#f2f2f2] font-brains font-bold ">
+                <h2 className="text-[#17171c] dark:text-[#f2f2f2] font-brains font-bold ">
                   Performance otimizada
                 </h2>
                 <p className="text-[#888891] fontt-inter text-sm ">
@@ -91,12 +94,12 @@ export function AboutSection() {
                 </p>
               </div>
             </div>
-            <div className="p-6 rounded-xl  bg-[#101014] border border-[#1B1B20] hover:border-[#894eef]/20 hover:scale-95 transition ease duration-300 group flex gap-4">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#894eef] group-hover:bg-[#894eef]/20 bg-[#1C1629] ">
+            <div className="p-6 rounded-xl  bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] hover:border-[#894eef]/20 hover:scale-95 transition ease duration-300 group flex gap-4">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#894eef] group-hover:bg-[#894eef]/20 bg-[#F2EBFD]  dark:bg-[#1C1629] ">
                 <Palette />
               </div>
               <div className="flex flex-col gap-1">
-                <h2 className="text-[#f2f2f2] font-brains font-bold ">
+                <h2 className="text-[#17171c] dark:text-[#f2f2f2] font-brains font-bold ">
                   Design estratégico
                 </h2>
                 <p className="text-[#888891] fontt-inter text-sm ">

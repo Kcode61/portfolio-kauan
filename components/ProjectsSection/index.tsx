@@ -54,13 +54,16 @@ export function ProjectsSection() {
     },
   ];
   return (
-    <section id="Projetos" className="py-16 px-4">
+    <section
+      id="Projetos"
+      className="py-16 px-4 bg-[#F8F7FA] dark:bg-[#09090B]"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl flex flex-col gap-4 mx-auto text-center">
           <span className=" font-brains text-sm text-[#894eef] ">
             {"<Projetos />"}
           </span>
-          <h2 className="text-4xl font-bold font-poppins text-white">
+          <h2 className="text-4xl font-bold font-poppins text-[#17171c] dark:text-white">
             Projetos
           </h2>
           <p className="font-inter  text-[#888891]">
@@ -71,9 +74,9 @@ export function ProjectsSection() {
           {ProjectList.map((project) => (
             <div
               key={project.id}
-              className="border group  h-full hover:border-[#894eef]/50   border-[#26262b] rounded-xl flex flex-col "
+              className="border group  h-full hover:border-[#894eef]/50  border-[#F1F1F3] dark:border-[#26262b] rounded-xl flex flex-col "
             >
-              <div className="px-4 py-3 border-b border-[#1B1B20] flex bg-[#101014] justify-between rounded-t-xl  items-center">
+              <div className="px-4 py-3 border-b border-[#F1F1F3] dark:border-[#1B1B20] flex bg-[#FFFFFF] dark:bg-[#101014] justify-between rounded-t-xl  items-center">
                 <div className="flex gap-2 items-center">
                   <div className="w-3 h-3 rounded-full bg-[#EF4343]"></div>
                   <div className="w-3 h-3 rounded-full bg-[#FACC14]"></div>
@@ -82,17 +85,19 @@ export function ProjectsSection() {
                 <a
                   target="_blank"
                   href={project.projectLink}
-                  className=" hover:text-[#894eef] transition text-[#f2f2f2] cursor-pointer"
+                  className=" hover:text-[#894eef] transition text-[#17171c]/70 dark:text-[#f2f2f2] cursor-pointer"
                 >
-                  <ExternalLink size={18} />
+                  <ExternalLink absoluteStrokeWidth size={18} />
                 </a>
               </div>
-              <div className="p-6 flex flex-col gap-4 bg-linear-to-br from-[#151519]  to-[#101014]">
+              <div className="p-6 flex flex-col gap-4 bg-[#FFFFFF] dark:bg-linear-to-br from-[#151519]  to-[#101014]">
                 <span className="text-xs text-[#888891]/70 font-brains">
-                  <span className="text-[#894eef]/50">0{project.id}</span> //{" "}
-                  {project.projectname}
+                  <span className="dark:text-[#894eef]/50 text-[#894eef]/90">
+                    0{project.id}
+                  </span>{" "}
+                  // {project.projectname}
                 </span>
-                <div className="px-4 py-5 rounded-xl bg-[#18181B] text-center ">
+                <div className="px-4 py-5 rounded-xl bg-[#F8F8F9] dark:bg-[#18181B] text-center ">
                   {project.projectImage ? (
                     <img
                       src={project.projectImage}
@@ -107,8 +112,8 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="p-6 h-full flex flex-col gap-4 rounded-b-xl bg-[#101014]">
-                <h2 className="text-lg transition text-[#f2f2f2] group-hover:text-[#894eef] font-brains font-bold ">
+              <div className="p-6 h-full flex flex-col gap-4 rounded-b-xl bg-[#FFFFFF] dark:bg-[#101014]">
+                <h2 className="text-lg transition text-[#17171c] dark:text-[#f2f2f2] group-hover:text-[#894eef] font-brains font-bold ">
                   {project.projectname}
                 </h2>
                 <p className="text-sm text-[#888891] font-inter max-w-md">
@@ -119,7 +124,7 @@ export function ProjectsSection() {
                   {project.projectStack.map((stack) => (
                     <span
                       key={stack}
-                      className="text-[#f2f2f2] hover:bg-[#222226]/40 transition py-1.5 px-4 rounded-full bg-[#222226] text-xs cursor-default font-brains font-bold"
+                      className="dark:text-[#f2f2f2] text-[#17171c] hover:bg-black/10 dark:hover:bg-[#222226]/40 transition py-1.5 px-4 rounded-full bg-[#EAEAEC] dark:bg-[#222226] text-xs cursor-default font-brains font-bold"
                     >
                       {stack}
                     </span>
