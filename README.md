@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Portfólio | Kauan Moura
 
-## Getting Started
+um Portfólio moderno e responsivo desenvolvida com **HTML** e **TailwindCSS**, com foco em **design minimalista**, **performance** e **animações suaves**.  
+O projeto representa meu estilo de desenvolvimento: **direto ao ponto, limpo e eficiente**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tecnologias utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Html5**
+- **TailwindCSS v4**
+- **React.js**
+- **Typescript**
+- **Next.js**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💡 Sobre o projeto
 
-## Learn More
+Esse Portfólio foi criada para apresentar minhas habilidades em **front-end**.  
+O layout foi pensado para ser **simples, funcional e elegante**, com foco em **experiência do usuário** e **conversão**.
 
-To learn more about Next.js, take a look at the following resources:
+Principais seções:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Header:** Navegação fluida com efeito hover
+- **Hero Section:** Introdução profissional com CTA de contato
+- **Sobre mim:** Breve apresentação e filosofia de desenvolvimento
+- **Habilidades:** Cards animados com foco nas principais áreas de domínio
+- **Projetos:** Exemplo real de landing page moderna
+- **Contato:** Chamada direta para conexão via GitHub
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎨 Destaques visuais
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Tema **dark** com contraste limpo
+- Animações suaves de entrada (`fade-in`, `slide-in`)
+- Uso de **Lucide Icons** para visual limpo e técnico
+- Responsividade garantida em todas as telas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+acesse o projeto online em : https://portfolio-kcode.pages.dev
