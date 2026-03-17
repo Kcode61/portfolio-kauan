@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 
 export function ContactPage() {
@@ -14,31 +16,64 @@ export function ContactPage() {
             <p className="text-xs text-[#888891] font-brains">contato.tsx</p>
           </div>
           <div className="px-8 py-10 rounded-b-xl flex bg-[#FFFFFF] dark:bg-[#101014] flex-col gap-4  items-center">
-            <span className=" font-brains text-sm text-[#894eef] ">
-              {"<Contato />"}
-            </span>
-
-            <h2 className="text-3xl dark:text-white  text-[#17171c] font-bold font-poppins">
-              Vamos Conversar?
-            </h2>
-            <p className="text-[16px] mb-4 font-inter text-[#888891] text-center max-w-md">
-              Estou disponível para novos projetos. Se você precisa de uma
-              landing page que converte, vamos bater um papo.
-            </p>
-            <div className="rounded-xl  w-full max-w-[320px] mb-4 border p-4 bg-[#F9F9FA] dark:bg-[#17171A] text-sm border-[#EEEEF0] dark:border-[#1E1E23] ">
-              <span className="font-brains text-[#894eef] ">$ </span>
-              <span className="text-[#888891] font-brains ">echo </span>
-              <span className="text-[#21c45d] font-brains">
-                "Vamos trabalhar juntos!"
-              </span>
-            </div>
-
-            <a
-              href="https://github.com/Kcode61"
-              className="py-3 px-6 cursor-pointer hover:bg-[#894eef]/80 hover:scale-95 transition ease duration-300 text-sm rounded-full text-white   font-inter flex gap-3 items-center bg-[#894eef]"
+            <motion.span
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              transition={{ duration: 0.7 }}
             >
-              <Github size={20} /> Ver Github
-            </a>
+              <span className=" font-brains text-sm text-[#894eef] ">
+                {"<Contato />"}
+              </span>
+            </motion.span>
+            <motion.div
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <h2 className="text-3xl dark:text-white  text-[#17171c] font-bold font-poppins">
+                Vamos Conversar?
+              </h2>
+            </motion.div>
+            <motion.div
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              <p className="text-[16px] mb-4 font-inter text-[#888891] text-center max-w-md">
+                Estou disponível para novos projetos. Se você precisa de uma
+                landing page que converte, vamos bater um papo.
+              </p>
+            </motion.div>
+            <motion.div
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+            >
+              <div className="rounded-xl  w-full max-w-[320px] mb-4 border p-4 bg-[#F9F9FA] dark:bg-[#17171A] text-sm border-[#EEEEF0] dark:border-[#1E1E23] ">
+                <span className="font-brains text-[#894eef] ">$ </span>
+                <span className="text-[#888891] font-brains ">echo </span>
+                <span className="text-[#21c45d] font-brains">
+                  "Vamos trabalhar juntos!"
+                </span>
+              </div>
+            </motion.div>
+            <motion.div
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              transition={{ duration: 0.7, delay: 0.8 }}
+            >
+              <a
+                href="https://github.com/Kcode61"
+                className="py-3 px-6 cursor-pointer hover:bg-[#894eef]/80 hover:scale-95 transition ease duration-300 text-sm rounded-full text-white   font-inter flex gap-3 items-center bg-[#894eef]"
+              >
+                <Github size={20} /> Ver Github
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>

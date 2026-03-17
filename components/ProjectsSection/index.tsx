@@ -1,4 +1,6 @@
+"use client";
 import { ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 type project = {
   id: number;
   projectname: string;
@@ -7,6 +9,7 @@ type project = {
   projectDescription: string;
   projectStack: string[];
 };
+
 export function ProjectsSection() {
   const ProjectList: project[] = [
     {
@@ -60,15 +63,36 @@ export function ProjectsSection() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl flex flex-col gap-4 mx-auto text-center">
-          <span className=" font-brains text-sm text-[#894eef] ">
-            {"<Projetos />"}
-          </span>
-          <h2 className="text-4xl font-bold font-poppins text-[#17171c] dark:text-white">
-            Projetos
-          </h2>
-          <p className="font-inter  text-[#888891]">
-            Projetos focados em experiência e design moderno e limpo.
-          </p>
+          <motion.span
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30 }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className=" font-brains text-sm text-[#894eef] ">
+              {"<Projetos />"}
+            </span>
+          </motion.span>
+          <motion.div
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <h2 className="text-4xl font-bold font-poppins text-[#17171c] dark:text-white">
+              Projetos
+            </h2>
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            <p className="font-inter  text-[#888891]">
+              Projetos focados em experiência e design moderno e limpo.
+            </p>
+          </motion.div>
         </div>
         <div className="py-16  grid grid-cols-1 md:grid-cols-2  gap-6">
           {ProjectList.map((project) => (
