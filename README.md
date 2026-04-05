@@ -38,4 +38,4 @@ Principais seções:
 - Uso de **Lucide Icons** para visual limpo e técnico
 - Responsividade garantida em todas as telas
 
-acesse o projeto online em : https://portfolio-kcode.pages.dev
+acesse o projeto online em : https://portfolio-kauan-a4z.pages.dev
