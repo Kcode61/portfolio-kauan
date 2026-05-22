@@ -1,6 +1,6 @@
 # 🌐 Portfólio | Kauan Moura
 
-um Portfólio moderno e responsivo desenvolvida com **HTML** e **TailwindCSS**, com foco em **design minimalista**, **performance** e **animações suaves**.  
+um Portfólio moderno e responsivo desenvolvida com foco em **design minimalista**, **performance** e **animações suaves**.  
 O projeto representa meu estilo de desenvolvimento: **direto ao ponto, limpo e eficiente**.
 
 ---
@@ -38,4 +38,4 @@ Principais seções:
 - Uso de **Lucide Icons** para visual limpo e técnico
 - Responsividade garantida em todas as telas
 
-acesse o projeto online em : https://portfolio-kcode.pages.dev
+acesse o projeto online em : https://portfolio-kauan-a4z.pages.dev
