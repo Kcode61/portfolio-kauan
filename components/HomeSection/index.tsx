@@ -60,7 +60,7 @@ export function HomeSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <h1 className="md:text-8xl flex text-6xl mb-6 font-bold font-poppins bg-gradient-to-r from-[#5B84B1] to-[#1B2E4B] bg-clip-text text-transparent">
+            <h1 className="md:text-8xl text-center flex text-6xl mb-6 font-bold font-poppins bg-gradient-to-r from-[#5B84B1] to-[#1B2E4B] bg-clip-text text-transparent">
               {displayText}{" "}
               <motion.span
                 initial={{ opacity: 0 }}
@@ -79,7 +79,7 @@ export function HomeSection() {
             className="mb-6"
           >
             <span className=" text-[#5B84B1] font-brains ">
-              // Especializado em Landing Pages
+              // Front-end Developer
             </span>
           </motion.div>
           <motion.div
@@ -88,10 +88,9 @@ export function HomeSection() {
             transition={{ duration: 1, delay: 0.6 }}
             className="mb-10"
           >
-            <p className="md:text-lg text-[#888891] font-medium font-inter">
-              Transformo ideias em landing pages funcionais e elegantes. Foco em
-              código limpo, design minimalista e páginas que realmente
-              convertem.
+            <p className="md:text-lg max-w-xl mx-auto text-[#888891] font-medium font-inter">
+              Desenvolvedor front-end focado em criar interfaces modernas,
+              responsivas e intuitivas com React, Next.js e TypeScript.
             </p>
           </motion.div>
           <motion.div
@@ -100,12 +99,18 @@ export function HomeSection() {
             transition={{ duration: 1, delay: 0.8 }}
             className="flex gap-6 items-center justify-center relative"
           >
-            <button className="py-3 px-8 font-inter shadow-[0px_0px_25px_rgba(58,95,132,0.18)] cursor-pointer hover:bg-[#2D4F73] hover:scale-95 transition ease duration-300 rounded-full bg-[#3A5F84] text-white font-inter text-sm font-bold">
-              Entre em contato
-            </button>
-            <button className="py-3 font-inter px-8 hover:bg-[#3A5F84] hover:border-[#3A5F84]  cursor-pointer   transition ease duration-300 border border-[#E5E5E8] dark:border-[#26262b] rounded-full bg-[#FAFAFA] dark:bg-[#09090b] hover:text-white text-[#17171c] dark:text-white font-inter text-sm font-bold">
-              Ver projetos
-            </button>
+            <a
+              href="https://wa.me/5577999772234?text=gostaria%20de%20solicitar%20um%20or%C3%A7amento"
+              className="py-3 px-8 font-inter shadow-[0px_0px_25px_rgba(58,95,132,0.18)] cursor-pointer hover:bg-[#2D4F73] hover:scale-95 transition ease duration-300 rounded-full bg-[#3A5F84] text-white font-inter text-sm font-bold"
+            >
+              Fale comigo
+            </a>
+            <a
+              href="#Projetos"
+              className="py-3 font-inter px-8 hover:bg-[#3A5F84] hover:border-[#3A5F84]  cursor-pointer   transition ease duration-300 border border-[#E5E5E8] dark:border-[#26262b] rounded-full bg-[#FAFAFA] dark:bg-[#09090b] hover:text-white text-[#17171c] dark:text-white font-inter text-sm font-bold"
+            >
+              Explorar projetos
+            </a>
           </motion.div>
         </div>
       </div>

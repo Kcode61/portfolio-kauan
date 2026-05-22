@@ -16,14 +16,14 @@ export function StatsSection() {
             <div className="w-12 h-12 flex mx-auto items-center justify-center rounded-xl bg-[#EAF2FB]  dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1] ">
               <FolderGit2 />
             </div>
-            <h2 className="bg-gradient-to-r mt-2 font-poppins font-bold from-[#7AA2D3] to-[#1B2E4B] bg-clip-text text-transparent text-5xl">
+            <h2 className="bg-gradient-to-r mt-2 font-poppins font-bold from-[#7AA2D3] to-[#1B2E4B] bg-clip-text text-transparent text-4xl">
               8+
             </h2>
             <p className=" text-[#17171c] dark:text-[#f2f2f2] font-brains text-medium">
-              Projetos Entregues
+              Projetos Desenvolvidos
             </p>
             <p className="text-sm text-[#888891] font-inter">
-              Landing pages modernas e responsivas
+              Aplicações modernas com foco em interface e experiência do usuário
             </p>
           </motion.div>
 
@@ -37,14 +37,14 @@ export function StatsSection() {
             <div className="w-12 h-12 flex mx-auto items-center justify-center rounded-xl  bg-[#EAF2FB]  dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1] ">
               <Users />
             </div>
-            <h2 className="bg-gradient-to-r mt-2 font-poppins font-bold from-[#7AA2D3] to-[#1B2E4B] bg-clip-text text-transparent text-5xl">
-              5+
+            <h2 className="bg-gradient-to-r mt-2 font-poppins font-bold from-[#7AA2D3] to-[#1B2E4B] bg-clip-text text-transparent text-4xl">
+              Next.js
             </h2>
             <p className=" text-[#17171c] dark:text-[#f2f2f2] font-brains text-medium">
-              Clientes Satisfeitos
+              Stack Principal
             </p>
             <p className="text-sm text-[#888891] font-inter">
-              Projetos focados em resultado
+              Desenvolvimento utilizando React, Next.js e TypeScript
             </p>
           </motion.div>
           <motion.div
@@ -57,14 +57,14 @@ export function StatsSection() {
             <div className="w-12 h-12 flex mx-auto items-center justify-center rounded-xl bg-[#EAF2FB]  dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1] ">
               <Gauge />
             </div>
-            <h2 className="bg-gradient-to-r mt-2 font-poppins font-bold from-[#7AA2D3] to-[#1B2E4B] bg-clip-text text-transparent text-5xl">
-              100%
+            <h2 className="bg-gradient-to-r mt-2 font-poppins font-bold from-[#7AA2D3] to-[#1B2E4B] bg-clip-text text-transparent text-4xl">
+              UI
             </h2>
             <p className=" text-[#17171c] dark:text-[#f2f2f2] font-brains text-medium">
-              Foco em Performance
+              Interfaces Responsivas
             </p>
             <p className="text-sm text-[#888891] font-inter">
-              Sites rápidos que convertem
+              Layouts modernos adaptados para desktop e mobile
             </p>
           </motion.div>
         </div>

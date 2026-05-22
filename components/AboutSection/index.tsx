@@ -36,9 +36,9 @@ export function AboutSection() {
                 transition={{ duration: 1, delay: 0.4 }}
               >
                 <p className="text-md max-w-lg text-[#888891] font-inter ">
-                  Sou desenvolvedor front-end apaixonado por criar landing pages
-                  que não só ficam bonitas, mas que realmente funcionam.
-                  Acredito que simplicidade e funcionalidade andam juntas.
+                  Sou desenvolvedor front-end focado em criar interfaces
+                  modernas, responsivas e intuitivas. Busco unir design limpo,
+                  performance e experiência do usuário em cada projeto.
                 </p>
               </motion.div>
               <motion.div
@@ -48,8 +48,9 @@ export function AboutSection() {
                 transition={{ duration: 1, delay: 0.6 }}
               >
                 <p className="text-md max-w-lg text-[#888891] font-inter ">
-                  Meu foco está em desenvolver páginas que carregam rápido, são
-                  fáceis de navegar e convertem visitantes em clientes.
+                  Tenho experiência no desenvolvimento de aplicações web
+                  modernas, com atenção à responsividade, componentização e boas
+                  práticas de desenvolvimento.
                 </p>
               </motion.div>
               <motion.div
@@ -59,8 +60,9 @@ export function AboutSection() {
                 transition={{ duration: 1, delay: 0.8 }}
               >
                 <p className="text-md max-w-lg  text-[#888891] font-inter ">
-                  Trabalho com HTML, CSS, Tailwind, JavaScript, TypeScript,
-                  React e Next.js. O importante é entregar resultado.
+                  Trabalho principalmente com React, Next.js, TypeScript e
+                  Tailwind CSS, criando interfaces modernas e escaláveis para
+                  web.
                 </p>
               </motion.div>
               <motion.div
@@ -90,18 +92,18 @@ export function AboutSection() {
                     ,
                     <br />
                     <span className="text-[12px] text-[#888891] ">
-                      foco:
+                      Stack:
                     </span>{" "}
                     <span className="text-[12px] text-[#21c45d]">
-                      "Landing Pages"
+                      "React & Next.js"
                     </span>
                     ,
                     <br />
                     <span className="text-[12px] text-[#888891] ">
-                      Objetivo:
+                      Especialidade:
                     </span>{" "}
                     <span className="text-[12px] text-[#21c45d]">
-                      "Converter visitantes"
+                      "Front-end Moderno"
                     </span>
                   </div>
                   <span className="text-[12px] text-[#17171c] dark:text-[#f2f2f2]">
@@ -124,10 +126,11 @@ export function AboutSection() {
                 </div>
                 <div className="flex flex-col gap-1">
                   <h2 className="text-[#17171c] dark:text-[#f2f2f2] font-brains font-bold ">
-                    Foco em resultado
+                    Interfaces modernas{" "}
                   </h2>
                   <p className="text-[#888891] fontt-inter text-sm ">
-                    Páginas pensadas para conversão, não apenas para estética
+                    Interfaces intuitivas com foco em usabilidade e experiência
+                    do usuário
                   </p>
                 </div>
               </div>
@@ -144,10 +147,11 @@ export function AboutSection() {
                 </div>
                 <div className="flex flex-col gap-1">
                   <h2 className="text-[#17171c] dark:text-[#f2f2f2] font-brains font-bold ">
-                    Performance otimizada
+                    Código performático
                   </h2>
                   <p className="text-[#888891] fontt-inter text-sm ">
-                    Carregamento rápido que mantém seus visitantes engajados
+                    Aplicações rápidas, responsivas e construídas com boas
+                    práticas modernas
                   </p>
                 </div>
               </div>
@@ -164,10 +168,10 @@ export function AboutSection() {
                 </div>
                 <div className="flex flex-col gap-1">
                   <h2 className="text-[#17171c] dark:text-[#f2f2f2] font-brains font-bold ">
-                    Design estratégico
+                    UI & Experiência
                   </h2>
                   <p className="text-[#888891] fontt-inter text-sm ">
-                    Cada elemento existe para guiar o usuário à ação
+                    Design limpo e consistente pensado para aplicações modernas
                   </p>
                 </div>
               </div>
