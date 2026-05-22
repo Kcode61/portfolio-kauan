@@ -29,7 +29,7 @@ export function SkillsSection() {
   return (
     <section
       id="Habilidades"
-      className="py-16 px-4 bg-[#F8F7FA] dark:bg-[#09090B]"
+      className="py-16 px-4 bg-[#F3F6FA] dark:bg-[#09090B]"
     >
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl flex flex-col gap-4 mx-auto text-center">
@@ -39,7 +39,7 @@ export function SkillsSection() {
             initial={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.7 }}
           >
-            <span className=" font-brains text-sm text-[#894eef] ">
+            <span className=" font-brains text-sm text-[#5B84B1] ">
               {"<Habilidades />"}
             </span>
           </motion.span>
@@ -70,9 +70,9 @@ export function SkillsSection() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="px-4 py-10 rounded-2xl flex-col gap-2 bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-center group text-center hover:border-[#894eef]/30 transition ease duration-300"
+            className="px-4 py-10 rounded-2xl flex-col gap-2 bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-center group text-center hover:border-[#5B84B1]/30 transition ease duration-300"
           >
-            <div className="w-14 h-14 mb-2 flex mx-auto items-center justify-center rounded-xl bg-[#F2EBFD]  dark:bg-[#1C1629] group-hover:bg-[#894eef]/20 text-[#894eef]/80 ">
+            <div className="w-14 h-14 mb-2 flex mx-auto items-center justify-center rounded-xl bg-[#EAF2FB]  dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1] ">
               <CodeXml size={28} />
             </div>
 
@@ -89,9 +89,9 @@ export function SkillsSection() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-            className="px-4 py-10 rounded-2xl flex-col gap-2 bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-center group text-center hover:border-[#894eef]/30 transition ease duration-300"
+            className="px-4 py-10 rounded-2xl flex-col gap-2 bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-center group text-center hover:border-[#5B84B1]/30 transition ease duration-300"
           >
-            <div className="w-14 mb-2 h-14 flex mx-auto items-center justify-center rounded-xl bg-[#F2EBFD]  dark:bg-[#1C1629] group-hover:bg-[#894eef]/20 text-[#894eef]/80 ">
+            <div className="w-14 mb-2 h-14 flex mx-auto items-center justify-center rounded-xl bg-[#EAF2FB]  dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1]">
               <Paintbrush size={28} />
             </div>
 
@@ -107,9 +107,9 @@ export function SkillsSection() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
-            className="px-4 py-10 rounded-2xl flex-col gap-2 bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-center group text-center hover:border-[#894eef]/30 transition ease duration-300"
+            className="px-4 py-10 rounded-2xl flex-col gap-2 bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-center group text-center hover:border-[#5B84B1]/30 transition ease duration-300"
           >
-            <div className="w-14 mb-2  h-14 flex mx-auto items-center justify-center rounded-xl bg-[#F2EBFD]  dark:bg-[#1C1629] group-hover:bg-[#894eef]/20 text-[#894eef]/80 ">
+            <div className="w-14 mb-2  h-14 flex mx-auto items-center justify-center rounded-xl bg-[#EAF2FB]  dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1]">
               <Gauge size={28} />
             </div>
 
@@ -143,7 +143,7 @@ export function SkillsSection() {
               {skills.map((skill) => (
                 <span
                   key={skill.title}
-                  className="py-2  cursor-default px-4 rounded-full text-[#17171c] dark:text-[#f2f2f2] font-brains text-sm  bg-[#EAEAEC] dark:bg-[#222226] hover:bg-[#50357f]/10 dark:hover:bg-[#50357f]/20 font-bold hover:text-[#9460ef]  transition ease duration-300"
+                  className="py-2  cursor-default px-4 rounded-full text-[#17171c] dark:text-[#f2f2f2] font-brains text-sm  bg-[#E2E8F0] dark:bg-[#222226] hover:bg-[#5B84B1]/10 dark:hover:bg-[#5B84B1]/20 font-bold hover:text-[#5B84B1]  transition ease duration-300"
                 >
                   {skill.title}
                 </span>

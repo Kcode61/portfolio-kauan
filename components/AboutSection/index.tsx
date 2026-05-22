@@ -3,7 +3,7 @@ import { Palette, Target, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 export function AboutSection() {
   return (
-    <section id="Sobre" className="py-16 px-4 bg-[#F8F7FA] dark:bg-[#09090B] ">
+    <section id="Sobre" className="py-16 px-4 bg-[#F3F6FA] dark:bg-[#09090B] ">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
           <div className="flex flex-col">
@@ -13,7 +13,7 @@ export function AboutSection() {
               initial={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.7 }}
             >
-              <span className=" font-brains text-sm text-[#894eef] ">
+              <span className=" font-brains text-sm text-[#5B84B1] ">
                 {"<Sobre />"}
               </span>
             </motion.span>
@@ -77,8 +77,8 @@ export function AboutSection() {
                 </div>
 
                 <div className="font-brains">
-                  <span className="text-[12px] text-[#894eef]">const </span>
-                  <span className="text-[12px] text-[#a87ef1]">developer </span>
+                  <span className="text-[12px] text-[#5B84B1]">const </span>
+                  <span className="text-[12px] text-[#7AA2D3]">developer </span>
                   <span className="text-[12px] text-[#17171c] dark:text-[#f2f2f2]">
                     {"= {"}
                   </span>
@@ -118,8 +118,8 @@ export function AboutSection() {
               initial={{ opacity: 0, x: 30 }}
               transition={{ duration: 1 }}
             >
-              <div className="p-6 rounded-xl  bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] hover:border-[#894eef]/20 hover:scale-95 transition ease duration-300 group flex gap-4">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#894eef] group-hover:bg-[#894eef]/20 bg-[#F2EBFD]  dark:bg-[#1C1629] ">
+              <div className="p-6 rounded-xl  bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] hover:border-[#5B84B1]/30 hover:scale-95 transition ease duration-300 group flex gap-4">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#5B84B1] group-hover:bg-[#5B84B1]/20 bg-[#EAF2FB]  dark:bg-[#162235] ">
                   <Target />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -138,8 +138,8 @@ export function AboutSection() {
               initial={{ opacity: 0, x: 30 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <div className="p-6 rounded-xl   bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] hover:border-[#894eef]/20 hover:scale-95 transition ease duration-300 group flex gap-4">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#894eef] group-hover:bg-[#894eef]/20 bg-[#F2EBFD]  dark:bg-[#1C1629] ">
+              <div className="p-6 rounded-xl   bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] hover:border-[#5B84B1]/30 hover:scale-95 transition ease duration-300 group flex gap-4">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#5B84B1] group-hover:bg-[#5B84B1]/20 bg-[#EAF2FB]  dark:bg-[#162235] ">
                   <Zap />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -158,8 +158,8 @@ export function AboutSection() {
               initial={{ opacity: 0, x: 30 }}
               transition={{ duration: 1, delay: 0.4 }}
             >
-              <div className="p-6 rounded-xl  bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] hover:border-[#894eef]/20 hover:scale-95 transition ease duration-300 group flex gap-4">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#894eef] group-hover:bg-[#894eef]/20 bg-[#F2EBFD]  dark:bg-[#1C1629] ">
+              <div className="p-6 rounded-xl  bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] hover:border-[#5B84B1]/30 hover:scale-95 transition ease duration-300 group flex gap-4">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-[#5B84B1] group-hover:bg-[#5B84B1]/20 bg-[#EAF2FB]  dark:bg-[#162235] ">
                   <Palette />
                 </div>
                 <div className="flex flex-col gap-1">

@@ -69,7 +69,7 @@ export function ProjectsSection() {
             initial={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.7 }}
           >
-            <span className=" font-brains text-sm text-[#894eef] ">
+            <span className=" font-brains text-sm text-[#5B84B1] ">
               {"<Projetos />"}
             </span>
           </motion.span>
@@ -98,7 +98,7 @@ export function ProjectsSection() {
           {ProjectList.map((project) => (
             <div
               key={project.id}
-              className="border group  h-full hover:border-[#894eef]/50  border-[#F1F1F3] dark:border-[#26262b] rounded-xl flex flex-col "
+              className="border group  h-full hover:border-[#5B84B1]/40  border-[#F1F1F3] dark:border-[#26262b] rounded-xl flex flex-col "
             >
               <div className="px-4 py-3 border-b border-[#F1F1F3] dark:border-[#1B1B20] flex bg-[#FFFFFF] dark:bg-[#101014] justify-between rounded-t-xl  items-center">
                 <div className="flex gap-2 items-center">
@@ -109,19 +109,19 @@ export function ProjectsSection() {
                 <a
                   target="_blank"
                   href={project.projectLink}
-                  className=" hover:text-[#894eef] transition text-[#17171c]/70 dark:text-[#f2f2f2] cursor-pointer"
+                  className=" hover:text-[#5B84B1] transition text-[#17171c]/70 dark:text-[#f2f2f2] cursor-pointer"
                 >
                   <ExternalLink absoluteStrokeWidth size={18} />
                 </a>
               </div>
               <div className="p-6 flex flex-col gap-4 bg-[#FFFFFF] dark:bg-linear-to-br from-[#151519]  to-[#101014]">
                 <span className="text-xs text-[#888891]/70 font-brains">
-                  <span className="dark:text-[#894eef]/50 text-[#894eef]/90">
+                  <span className="dark:text-[#5B84B1]/40 text-[#5B84B1]/90">
                     0{project.id}
                   </span>{" "}
                   // {project.projectname}
                 </span>
-                <div className="px-4 py-5 rounded-xl bg-[#F8F8F9] dark:bg-[#18181B] text-center ">
+                <div className="px-4 py-5 rounded-xl bg-[#EAF2FB] dark:bg-[#18181B] text-center ">
                   {project.projectImage ? (
                     <img
                       src={project.projectImage}
@@ -137,7 +137,7 @@ export function ProjectsSection() {
               </div>
 
               <div className="p-6 h-full flex flex-col gap-4 rounded-b-xl bg-[#FFFFFF] dark:bg-[#101014]">
-                <h2 className="text-lg transition text-[#17171c] dark:text-[#f2f2f2] group-hover:text-[#894eef] font-brains font-bold ">
+                <h2 className="text-lg transition text-[#17171c] dark:text-[#f2f2f2] group-hover:text-[#5B84B1] font-brains font-bold ">
                   {project.projectname}
                 </h2>
                 <p className="text-sm text-[#888891] font-inter max-w-md">

@@ -1,5 +1,6 @@
-import { Metadata } from "next";
+// @ts-ignore: Ignore missing type declarations for global CSS import
 import "./globals.css";
+import type { Metadata } from "next";
 import { Poppins, JetBrains_Mono, Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
