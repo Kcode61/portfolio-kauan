@@ -55,6 +55,23 @@ export function ProjectsSection() {
         "Next.js",
       ],
     },
+    {
+      id: 5,
+      projectname: "FlowFin",
+      projectDescription:
+        "FlowFin - um dashboard financeiro focado em organizar sua vida financeira",
+      projectLink: "https://flowfin-financeiro.vercel.app/",
+      projectStack: [
+        "React",
+        "Spring Boot",
+        "Java",
+        "JWT",
+        "Tailwind",
+        "Typescript",
+        "Zustand",
+        "Next.js",
+      ],
+    },
   ];
   return (
     <section
