@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="pt-br" className="scroll-smooth" suppressHydrationWarning>
       <body
         cz-shortcut-listen="true"
-        className={`antialiased bg-[#09090B] ${inter.variable} ${jetbrains.variable} ${poppins.variable}`}
+        className={`antialiased  ${inter.variable} ${jetbrains.variable} ${poppins.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
