@@ -1,0 +1,119 @@
+"use client";
+import { Braces, Brackets, CodeXml, Parentheses } from "lucide-react";
+import { HomeSpan } from "../HomeSpan";
+
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+export function HomeSection() {
+  const text = "Kauan Moura";
+  const [displayText, setDisplayText] = useState("");
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText((prev) => prev + text[index]);
+        setIndex(index + 1);
+      }, 100);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [index]);
+  return (
+    <section className="py-32 px-4 relative bg-[#FAFAFA] dark:bg-[#09090B]">
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(#EFEFF0_1px,transparent_1px)]     dark:bg-[radial-gradient(#111113_1px,transparent_1px)]   [background-size:22px_22px]" />
+
+      <div className="absolute inset-0 pointer-events-none">
+        <span className="absolute top-20 left-20 text-[#2D4F73] opacity-20">
+          <CodeXml size={90} />
+        </span>
+
+        <span className="absolute top-40 right-32 text-[#2D4F73] opacity-20">
+          <Braces size={40} />
+        </span>
+
+        <span className="absolute bottom-32 left-40 text-[#2D4F73] opacity-20">
+          <Brackets size={60} />
+        </span>
+
+        <span className="absolute bottom-20 right-20 text-[#2D4F73] opacity-20">
+          <Parentheses size={70} />
+        </span>
+      </div>
+
+      <div className=" relative z-10 max-w-7xl mx-auto ">
+        <div className="max-w-3xl mx-auto flex flex-col  text-center">
+          <HomeSpan />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <p className="text-xl font-inter mt-8 mb-2 font-medium  text-[#888891] ">
+              Olá, eu sou
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <h1 className="md:text-8xl text-center flex text-6xl mb-6 font-bold font-poppins bg-gradient-to-r from-[#5B84B1] to-[#1B2E4B] bg-clip-text text-transparent">
+              {displayText}{" "}
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 0.9, repeat: Infinity }}
+                className=" bg-gradient-to-r from-[#5B84B1] to-[#1B2E4B] bg-clip-text text-transparent"
+              >
+                |
+              </motion.span>
+            </h1>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="mb-6"
+          >
+            <span className=" text-[#5B84B1] font-brains ">
+              // Front-end Developer
+            </span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="mb-10"
+          >
+            <p className="md:text-lg max-w-xl mx-auto text-[#888891] font-medium font-inter">
+              Desenvolvedor front-end focado em criar interfaces modernas,
+              responsivas e intuitivas com React, Next.js e TypeScript.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="flex gap-6 items-center justify-center relative"
+          >
+            <a
+              href="https://wa.me/5577999772234?text=gostaria%20de%20solicitar%20um%20or%C3%A7amento"
+              className="py-3 px-8 font-inter shadow-[0px_0px_25px_rgba(58,95,132,0.18)] cursor-pointer hover:bg-[#2D4F73] hover:scale-95 transition ease duration-300 rounded-full bg-[#3A5F84] text-white font-inter text-sm font-bold"
+            >
+              Fale comigo
+            </a>
+            <a
+              href="#Projetos"
+              className="py-3 font-inter px-8 hover:bg-[#3A5F84] hover:border-[#3A5F84]  cursor-pointer   transition ease duration-300 border border-[#E5E5E8] dark:border-[#26262b] rounded-full bg-[#FAFAFA] dark:bg-[#09090b] hover:text-white text-[#17171c] dark:text-white font-inter text-sm font-bold"
+            >
+              Explorar projetos
+            </a>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
