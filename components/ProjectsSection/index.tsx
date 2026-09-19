@@ -72,6 +72,23 @@ export function ProjectsSection() {
         "Next.js",
       ],
     },
+    {
+      id: 6,
+      projectname: "TechStore - Nova Versão",
+      projectDescription:
+        "TechStore - uma versão atualizada da loja e-commerce focada em produtos tecnológicos, com melhorias de design e funcionalidades aprimoradas.",
+      projectLink: "https://tech-store-three-virid.vercel.app/",
+      projectStack: [
+        "React",
+        "Spring Boot",
+        "Java",
+        "JWT",
+        "Tailwind",
+        "Typescript",
+        "Zustand",
+        "Next.js",
+      ],
+    },
   ];
   return (
     <section
