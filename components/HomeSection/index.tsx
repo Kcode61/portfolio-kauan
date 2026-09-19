@@ -100,6 +100,7 @@ export function HomeSection() {
             className="flex gap-6 items-center justify-center relative"
           >
             <a
+              target="_blank"
               href="https://wa.me/5577999772234?text=gostaria%20de%20solicitar%20um%20or%C3%A7amento"
               className="py-3 px-8 font-inter shadow-[0px_0px_25px_rgba(58,95,132,0.18)] cursor-pointer hover:bg-[#2D4F73] hover:scale-95 transition ease duration-300 rounded-full bg-[#3A5F84] text-white font-inter text-sm font-bold"
             >

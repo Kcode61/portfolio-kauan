@@ -93,7 +93,7 @@ export function ProjectsSection() {
   return (
     <section
       id="Projetos"
-      className="py-16 px-4 bg-[#F8F7FA] dark:bg-[#09090B]"
+      className="py-16 px-4 bg-[#F8F7FA] dark:bg-[#09090B] bg-[url('/backgroundbranco.png')] dark:bg-[url('/backgroundroxo.png')]"
     >
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl flex flex-col gap-4 mx-auto text-center">

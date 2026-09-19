@@ -1,7 +1,6 @@
 "use client";
 import { CodeXml, Gauge, Paintbrush } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 export function SkillsSection() {
   const skills = [
     {
@@ -28,10 +27,7 @@ export function SkillsSection() {
     },
   ];
   return (
-    <section
-      id="Habilidades"
-      className="py-16 px-4 bg-[url('/backgroundbranco.png')] dark:bg-[url('/backgroundroxo.png')]"
-    >
+    <section id="Habilidades" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl flex flex-col gap-4 mx-auto text-center">
           <motion.span
