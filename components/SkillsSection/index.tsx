@@ -27,7 +27,10 @@ export function SkillsSection() {
     },
   ];
   return (
-    <section id="Habilidades" className="py-16 px-4">
+    <section
+      id="Habilidades"
+      className="py-16 bg-[#FAFAFA] dark:bg-[#09090B] px-4"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl flex flex-col gap-4 mx-auto text-center">
           <motion.span
