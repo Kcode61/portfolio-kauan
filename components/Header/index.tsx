@@ -59,7 +59,7 @@ export function Header() {
 
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="dark:text-white text-[#17171c]  p-2 rounded-full cursor-pointer transition ease-duration-300 hover:scale-95 duration-300  hover:bg-[#E2E8F0] dark:hover:bg-[#222226] "
+              className="dark:text-white text-[#17171c]  p-2 rounded-full transition ease-duration-300 hover:scale-95 duration-300  hover:bg-[#E2E8F0] dark:hover:bg-[#222226] "
             >
               {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
             </button>
@@ -67,7 +67,7 @@ export function Header() {
 
           <button
             onClick={() => setisopen(!isopen)}
-            className="dark:text-white text-[#17171c] flex md:hidden p-2 rounded-full cursor-pointer transition-all ease-duration-300 hover:scale-95 duration-300  hover:bg-[#222226] "
+            className="dark:text-white text-[#17171c] flex md:hidden p-2 rounded-full transition-all ease-duration-300 hover:scale-95 duration-300  hover:bg-[#222226] "
           >
             {isopen ? <X /> : <Menu />}
           </button>

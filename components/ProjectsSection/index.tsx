@@ -143,7 +143,7 @@ export function ProjectsSection() {
                 <a
                   target="_blank"
                   href={project.projectLink}
-                  className=" hover:text-[#5B84B1] transition text-[#17171c]/70 dark:text-[#f2f2f2] cursor-pointer"
+                  className=" hover:text-[#5B84B1] transition text-[#17171c]/70 dark:text-[#f2f2f2]"
                 >
                   <ExternalLink absoluteStrokeWidth size={18} />
                 </a>

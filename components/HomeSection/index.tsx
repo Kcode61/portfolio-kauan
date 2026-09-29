@@ -132,14 +132,14 @@ export function HomeSection() {
               <a
                 target="_blank"
                 href="https://wa.me/5577999772234?text=gostaria%20de%20solicitar%20um%20or%C3%A7amento"
-                className="w-full sm:w-auto py-3 px-7 font-inter shadow-[0px_0px_25px_rgba(58,95,132,0.18)] cursor-pointer hover:bg-[#2D4F73] hover:scale-[0.98] transition ease duration-300 rounded-full bg-[#3A5F84] text-white font-inter text-sm font-bold flex items-center justify-center gap-2"
+                className="w-full sm:w-auto py-3 px-7 font-inter shadow-[0px_0px_25px_rgba(58,95,132,0.18)] hover:bg-[#2D4F73] hover:scale-[0.98] transition ease duration-300 rounded-full bg-[#3A5F84] text-white font-inter text-sm font-bold flex items-center justify-center gap-2"
               >
                 Fale comigo
                 <ArrowUpRight size={16} />
               </a>
               <a
                 href="#Projetos"
-                className="w-full sm:w-auto py-3 font-inter px-7 hover:bg-[#3A5F84] hover:border-[#3A5F84] cursor-pointer transition ease duration-300 border border-[#E5E5E8] dark:border-[#26262b] rounded-full bg-[#FAFAFA] dark:bg-[#09090b] hover:text-white text-[#17171c] dark:text-white font-inter text-sm font-bold"
+                className="w-full sm:w-auto py-3 font-inter px-7 hover:bg-[#3A5F84] hover:border-[#3A5F84] transition ease duration-300 border border-[#E5E5E8] dark:border-[#26262b] rounded-full bg-[#FAFAFA] dark:bg-[#09090b] hover:text-white text-[#17171c] dark:text-white font-inter text-sm font-bold"
               >
                 Ver projetos
               </a>

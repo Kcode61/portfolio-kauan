@@ -69,7 +69,7 @@ export function ContactPage() {
             >
               <a
                 href="https://github.com/Kcode61"
-                className="py-3 px-6 cursor-pointer hover:bg-[#2D4F73] hover:scale-95 transition ease duration-300 text-sm rounded-full text-white   font-inter flex gap-3 items-center bg-[#3A5F84]"
+                className="py-3 px-6 hover:bg-[#2D4F73] hover:scale-95 transition ease duration-300 text-sm rounded-full text-white   font-inter flex gap-3 items-center bg-[#3A5F84]"
               >
                 <Github size={20} /> Ver Github
               </a>

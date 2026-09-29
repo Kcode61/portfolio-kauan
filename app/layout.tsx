@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins, JetBrains_Mono, Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import CustomCursor from "@/components/CustomCursor";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`antialiased  ${inter.variable} ${jetbrains.variable} ${poppins.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <CustomCursor />
           {children}
         </ThemeProvider>
       </body>
