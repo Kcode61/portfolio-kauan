@@ -70,15 +70,19 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="p-3 rounded-xl mt-4 bg-[#FFFFFF] dark:bg-[#101014] border border-[#e4e4e7] dark:border-[#1B1B20] flex flex-col gap-2"
+                className="py-3 rounded-xl mt-4 bg-[#FFFFFF] dark:bg-[#101014] border border-[#e4e4e7] dark:border-[#1B1B20] flex flex-col gap-2"
               >
-                <div className="flex gap-2 items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#EF4343]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#FACC14]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#21C45D]"></div>
+                <div className=" pb-2 pr-3 border-b border-[#F1F1F3] dark:border-[#1B1B20] flex justify-between items-center bg-[#FFFFFF] dark:bg-[#101014]">
+                  <div className="flex px-3 gap-2 items-center">
+                    <div className="w-3 h-3 rounded-full bg-[#EF4343]" />
+                    <div className="w-3 h-3 rounded-full bg-[#FACC14]" />
+                    <div className="w-3 h-3 rounded-full bg-[#21C45D]" />
+                  </div>
+                  <span className="text-[10px] uppercase text-[#888891] font-brains">
+                    About.tsx
+                  </span>
                 </div>
-
-                <div className="font-brains">
+                <div className="font-brains px-3">
                   <span className="text-[12px] text-[#5B84B1]">const </span>
                   <span className="text-[12px] text-[#7AA2D3]">developer </span>
                   <span className="text-[12px] text-[#17171c] dark:text-[#f2f2f2]">

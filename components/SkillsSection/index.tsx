@@ -1,31 +1,45 @@
 "use client";
-import { CodeXml, Gauge, Paintbrush } from "lucide-react";
+import { CodeXml, Gauge, LayoutTemplate, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
-export function SkillsSection() {
-  const skills = [
-    {
-      title: "Html",
-    },
-    {
-      title: "Css",
-    },
-    {
-      title: "Tailwind",
-    },
-    {
-      title: "Javascript",
-    },
-    {
-      title: "Typescript",
-    },
 
+export function SkillsSection() {
+  const skillGroups = [
     {
-      title: "React.js",
+      title: "Interfaces modernas",
+      description:
+        "Criação de layouts responsivos, claros e visualmente consistentes para interfaces digitais.",
+      icon: CodeXml,
+      tags: ["React", "Next.js", "Tailwind", "Responsividade"],
     },
     {
-      title: "Next.js",
+      title: "Componentização",
+      description:
+        "Estruturação de sistemas reutilizáveis, escaláveis e fáceis de manter em produção.",
+      icon: LayoutTemplate,
+      tags: ["Design Systems", "Componentes", "TypeScript", "Acessibilidade"],
+    },
+    {
+      title: "Performance e entrega",
+      description:
+        "Otimização de experiência, velocidade e conversão com foco em resultado real.",
+      icon: Rocket,
+      tags: ["UX", "Performance", "SEO", "Conversão"],
     },
   ];
+
+  const currentStack = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Tailwind",
+    "Zustand",
+    "Git",
+    "Figma",
+  ];
+
   return (
     <section
       id="Habilidades"
@@ -39,10 +53,11 @@ export function SkillsSection() {
             initial={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.7 }}
           >
-            <span className=" font-brains text-sm text-[#5B84B1] ">
+            <span className="font-brains text-sm text-[#5B84B1]">
               {"<Habilidades />"}
             </span>
           </motion.span>
+
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -53,73 +68,61 @@ export function SkillsSection() {
               Habilidades
             </h2>
           </motion.div>
+
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             initial={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            <p className="font-inter  text-[#888891]">
-              Combinação estratégica de design, código e foco em resultado
+            <p className="font-inter text-[#888891]">
+              Soluções front-end pensadas para experiência, clareza visual e
+              desempenho.
             </p>
           </motion.div>
         </div>
+
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="px-4 py-10 rounded-2xl flex-col gap-2 bg-[#FFFFFF] dark:bg-[#09080D] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-center group text-center hover:border-[#5B84B1]/30 transition ease duration-300"
-          >
-            <div className="w-14 h-14 mb-2 flex mx-auto items-center justify-center rounded-xl bg-[#EAF2FB]  dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1] ">
-              <CodeXml size={28} />
-            </div>
+          {skillGroups.map(
+            ({ title, description, tags, icon: Icon }, index) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeOut",
+                  delay: index * 0.15,
+                }}
+                className="px-5 py-8 rounded-2xl flex-col gap-4 bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-start group hover:border-[#5B84B1]/30 transition ease duration-300"
+              >
+                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[#EAF2FB] dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1]">
+                  <Icon size={28} />
+                </div>
 
-            <p className="text-[#17171c] dark:text-[#f2f2f2] text-lg font-brains font-bold">
-              Desenvolvimento Web
-            </p>
-            <p className="text-sm text-[#888891] font-inter">
-              Código semântico, responsivo e otimizado para SEO e performance
-            </p>
-          </motion.div>
+                <div className="space-y-2">
+                  <p className="text-[#17171c] dark:text-[#f2f2f2] text-lg font-brains font-bold">
+                    {title}
+                  </p>
+                  <p className="text-sm text-[#888891] font-inter leading-relaxed">
+                    {description}
+                  </p>
+                </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-            className="px-4 py-10 rounded-2xl flex-col gap-2 bg-[#FFFFFF] dark:bg-[#09080D] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-center group text-center hover:border-[#5B84B1]/30 transition ease duration-300"
-          >
-            <div className="w-14 mb-2 h-14 flex mx-auto items-center justify-center rounded-xl bg-[#EAF2FB]  dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1]">
-              <Paintbrush size={28} />
-            </div>
-
-            <p className="text-[#17171c] dark:text-[#f2f2f2] text-lg font-brains font-bold">
-              UI/UX Design
-            </p>
-            <p className="text-sm text-[#888891] font-inter">
-              Interfaces intuitivas que guiam o usuário naturalmente à conversão
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
-            className="px-4 py-10 rounded-2xl flex-col gap-2 bg-[#FFFFFF] dark:bg-[#09080D] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-center group text-center hover:border-[#5B84B1]/30 transition ease duration-300"
-          >
-            <div className="w-14 mb-2  h-14 flex mx-auto items-center justify-center rounded-xl bg-[#EAF2FB]  dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1]">
-              <Gauge size={28} />
-            </div>
-
-            <p className="text-[#17171c] dark:text-[#f2f2f2] text-lg font-brains font-bold">
-              Performance & Conversão
-            </p>
-            <p className="text-sm text-[#888891] font-inter">
-              Otimização técnica focada em velocidade e taxa de conversão
-            </p>
-          </motion.div>
+                <div className="flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-full bg-[#EAEAEC] dark:bg-[#1A1A1F] text-[10px] font-brains text-[#17171c] dark:text-white font-bold"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ),
+          )}
         </div>
 
         <div className="flex flex-col items-center gap-4">
@@ -129,23 +132,24 @@ export function SkillsSection() {
             initial={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.7, delay: 0.8 }}
           >
-            <h2 className="text-sm text-[#888891] font-brains ">
+            <h2 className="text-sm text-[#888891] font-brains">
               {"stack.current()"}
             </h2>
           </motion.div>
+
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             initial={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.7, delay: 1 }}
           >
-            <div className="flex gap-4 flex-wrap justify-center items-center">
-              {skills.map((skill) => (
+            <div className="flex gap-3 flex-wrap justify-center items-center">
+              {currentStack.map((skill) => (
                 <span
-                  key={skill.title}
-                  className="py-2  cursor-default px-4 rounded-full text-[#17171c] dark:text-[#f2f2f2] font-brains text-sm  bg-[#E2E8F0] dark:bg-[#0A0A0E] hover:bg-[#5B84B1]/10 dark:hover:bg-[#5B84B1]/20 font-bold hover:text-[#5B84B1]  transition ease duration-300"
+                  key={skill}
+                  className="py-2 px-4 rounded-full text-[#17171c] dark:text-[#f2f2f2] font-brains text-sm bg-[#E2E8F0] dark:bg-[#0A0A0E] hover:bg-[#5B84B1]/10 dark:hover:bg-[#5B84B1]/20 font-bold hover:text-[#5B84B1] transition ease duration-300"
                 >
-                  {skill.title}
+                  {skill}
                 </span>
               ))}
             </div>
