@@ -3,6 +3,7 @@ import { ContactPage } from "@/components/ContactPage";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HomeSection } from "@/components/HomeSection";
+
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { SkillsSection } from "@/components/SkillsSection";
 
