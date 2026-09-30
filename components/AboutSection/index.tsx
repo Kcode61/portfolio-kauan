@@ -151,7 +151,7 @@ export function AboutSection() {
             <h3 className="mb-8 font-poppins text-2xl font-bold text-[#17171c] dark:text-[#f2f2f2]">
               Minha trajetória
             </h3>
-            <ol className="ml-2 border-l border-[#22222A]">
+            <ol className="ml-2 border-l border-[#5B84B1]/40">
               {milestones.map((milestone, index) => (
                 <motion.li
                   key={milestone.date}
@@ -161,7 +161,7 @@ export function AboutSection() {
                   transition={{ duration: 0.5, delay: index * 0.12 }}
                   className="relative pb-9 pl-7 last:pb-0"
                 >
-                  <span className="absolute -left-[5px] top-1.5 h-[9px] w-[9px] rounded-full bg-[#101014] ring-4 ring-[#F3F6FA] dark:ring-[#09090B]" />
+                  <span className="absolute -left-[5px] top-1.5 h-[9px] w-[9px] rounded-full bg-[#5B84B1] ring-4 ring-[#F3F6FA] dark:ring-[#09090B]" />
                   <time className="font-brains text-xs text-[#5B84B1]">
                     {milestone.date}
                   </time>

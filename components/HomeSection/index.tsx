@@ -92,7 +92,7 @@ export function HomeSection() {
   return (
     <section
       id="Inicio"
-      className="relative flex min-h-[calc(100svh-72px)] items-center overflow-hidden bg-[#09090B] px-6 py-16 text-[#f2f2f4] sm:px-10 lg:px-16"
+      className="relative flex min-h-[calc(100svh-72px)] items-center overflow-hidden bg-[#F2F6FA] px-6 py-16 text-[#17171c] dark:bg-[#09090B] dark:text-[#f2f2f4] sm:px-10 lg:px-16"
     >
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
         <div className="max-w-4xl mx-auto lg:mx-0 flex flex-col text-center lg:text-left">
@@ -103,7 +103,7 @@ export function HomeSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <p className="text-xl font-inter mt-8 mb-2 font-medium text-[#888891]">
+            <p className="text-xl font-inter mt-8 mb-2 font-medium text-[#626773] dark:text-[#a1a1aa]">
               Olá, eu sou
             </p>
           </motion.div>
@@ -113,13 +113,13 @@ export function HomeSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <h1 className="md:text-7xl flex justify-center lg:justify-start text-5xl mb-5 font-bold font-poppins bg-gradient-to-r from-[#5B84B1] to-[#1B2E4B] bg-clip-text text-transparent">
+            <h1 className="md:text-7xl flex justify-center lg:justify-start text-5xl mb-5 font-bold font-poppins bg-gradient-to-r from-[#5B84B1] to-[#1B2E4B] dark:to-[#7AA2D3] bg-clip-text text-transparent">
               {displayText}
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 0.9, repeat: Infinity }}
-                className="bg-gradient-to-r from-[#5B84B1] to-[#1B2E4B] bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-[#5B84B1] to-[#1B2E4B] dark:to-[#7AA2D3] bg-clip-text text-transparent"
               >
                 |
               </motion.span>
@@ -143,7 +143,7 @@ export function HomeSection() {
             transition={{ duration: 1, delay: 0.5 }}
             className="mb-8"
           >
-            <p className="md:text-lg max-w-xl mx-auto lg:mx-0 text-[#888891] font-medium font-inter leading-relaxed">
+            <p className="md:text-lg max-w-xl mx-auto lg:mx-0 text-[#626773] dark:text-[#a1a1aa] font-medium font-inter leading-relaxed">
               Desenvolvedor front-end especializado em interfaces modernas,
               responsivas e performáticas com React, Next.js e TypeScript.
             </p>
