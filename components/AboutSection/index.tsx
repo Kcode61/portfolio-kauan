@@ -92,11 +92,11 @@ export function AboutSection() {
                 </p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.9, rotate: 4 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 4 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="mt-4 overflow-hidden border border-white/15 bg-[#101014] shadow-[18px_22px_0_rgba(0,0,0,0.28)]"
+                className="mt-8 overflow-hidden border border-white/15 bg-[#101014] shadow-[18px_22px_0_rgba(0,0,0,0.28)]"
               >
                 <div className="flex min-h-11 items-center gap-2 border-b border-white/10 bg-[#22222a] px-3 sm:px-4">
                   <div className="flex items-center gap-2">
