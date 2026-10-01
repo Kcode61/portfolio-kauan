@@ -14,35 +14,14 @@ export function ProjectsSection() {
   const ProjectList: project[] = [
     {
       id: 1,
-      projectname: "Landing Page Tailwind",
-      projectDescription:
-        "Landing page moderna focada em Responsividade feita usando TailwindCSS",
-      projectLink: "https://tailwind-landing-page-4fe.pages.dev",
-      projectStack: ["Html", "Css", "Tailwind"],
-    },
-    {
-      id: 2,
       projectname: "FlowBoard - KabanBoard",
       projectDescription: "Um Kaban Board focado em conversão e interatividade",
       projectLink: "https://flowboard-kanban-board.pages.dev",
       projectStack: ["Next.js", "React", "Tailwind", "Typescript", "Zustand"],
     },
+
     {
-      id: 3,
-      projectname: "E-commerce: TechStore",
-      projectDescription: "E-commerce de acessórios e produtos tecnológicos",
-      projectLink: "https://e-commerce-tech-store.pages.dev",
-      projectStack: [
-        "Html",
-        "React",
-        "Tailwind",
-        "Typescript",
-        "Zustand",
-        "React-Router",
-      ],
-    },
-    {
-      id: 4,
+      id: 2,
       projectname: "Pamofocus",
       projectDescription: "Pamofocus - pamodoro baseado na técnica Pomodoro",
       projectLink: "https://pamofocus.pages.dev",
@@ -56,7 +35,7 @@ export function ProjectsSection() {
       ],
     },
     {
-      id: 5,
+      id: 3,
       projectname: "FlowFin",
       projectDescription:
         "FlowFin - um dashboard financeiro focado em organizar sua vida financeira",
@@ -73,7 +52,7 @@ export function ProjectsSection() {
       ],
     },
     {
-      id: 6,
+      id: 4,
       projectname: "TechStore - Nova Versão",
       projectDescription:
         "TechStore - uma versão atualizada da loja e-commerce focada em produtos tecnológicos, com melhorias de design e funcionalidades aprimoradas.",
