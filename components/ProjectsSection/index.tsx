@@ -1,35 +1,34 @@
 "use client";
 import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
-type project = {
+type Project = {
   id: number;
   projectname: string;
   projectLink: string;
-  projectImage?: string;
   projectDescription: string;
   projectStack: string[];
 };
 
 export function ProjectsSection() {
-  const ProjectList: project[] = [
+  const ProjectList: Project[] = [
     {
       id: 1,
-      projectname: "FlowBoard - KabanBoard",
-      projectDescription: "Um Kaban Board focado em conversão e interatividade",
+      projectname: "FlowBoard",
+      projectDescription:
+        "Um quadro Kanban focado em organização e interatividade.",
       projectLink: "https://flowboard-kanban-board.pages.dev",
-      projectStack: ["Next.js", "React", "Tailwind", "Typescript", "Zustand"],
+      projectStack: ["Next.js", "React", "Tailwind", "TypeScript", "Zustand"],
     },
-
     {
       id: 2,
       projectname: "Pamofocus",
-      projectDescription: "Pamofocus - pamodoro baseado na técnica Pomodoro",
+      projectDescription: "Uma ferramenta de foco baseada na técnica Pomodoro.",
       projectLink: "https://pamofocus.pages.dev",
       projectStack: [
-        "Html",
+        "HTML",
         "React",
         "Tailwind",
-        "Typescript",
+        "TypeScript",
         "Zustand",
         "Next.js",
       ],
@@ -38,7 +37,7 @@ export function ProjectsSection() {
       id: 3,
       projectname: "FlowFin",
       projectDescription:
-        "FlowFin - um dashboard financeiro focado em organizar sua vida financeira",
+        "Um dashboard para acompanhar e organizar suas finanças.",
       projectLink: "https://flowfin-financeiro.vercel.app/",
       projectStack: [
         "React",
@@ -46,16 +45,16 @@ export function ProjectsSection() {
         "Java",
         "JWT",
         "Tailwind",
-        "Typescript",
+        "TypeScript",
         "Zustand",
         "Next.js",
       ],
     },
     {
       id: 4,
-      projectname: "TechStore - Nova Versão",
+      projectname: "TechStore",
       projectDescription:
-        "TechStore - uma versão atualizada da loja e-commerce focada em produtos tecnológicos, com melhorias de design e funcionalidades aprimoradas.",
+        "Uma loja de tecnologia com foco em navegação e experiência de compra.",
       projectLink: "https://tech-store-three-virid.vercel.app/",
       projectStack: [
         "React",
@@ -63,7 +62,7 @@ export function ProjectsSection() {
         "Java",
         "JWT",
         "Tailwind",
-        "Typescript",
+        "TypeScript",
         "Zustand",
         "Next.js",
       ],
@@ -107,68 +106,61 @@ export function ProjectsSection() {
             </p>
           </motion.div>
         </div>
-        <div className="py-16  grid grid-cols-1 md:grid-cols-2  gap-6">
-          {ProjectList.map((project) => (
-            <div
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {ProjectList.map((project, index) => (
+            <motion.article
               key={project.id}
-              className="border group  h-full hover:border-[#5B84B1]/40  border-[#F1F1F3] dark:border-[#26262b] rounded-xl flex flex-col "
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: index * 0.15,
+              }}
+              className="group flex h-full flex-col items-start gap-4 rounded-xl border border-[#F1F1F3] bg-white px-5 py-8 transition duration-300 ease-in-out hover:border-[#5B84B1]/30 dark:border-[#1B1B20] dark:bg-[#101014]"
             >
-              <div className="px-4 py-3 border-b border-[#F1F1F3] dark:border-[#1B1B20] flex bg-[#FFFFFF] dark:bg-[#101014] justify-between rounded-t-xl  items-center">
-                <div className="flex gap-2 items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#EF4343]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#FACC14]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#21C45D]"></div>
-                </div>
+              <div className="flex w-full items-center justify-between gap-4">
+                <span className="font-brains text-xs text-[#5B84B1]">
+                  projeto.0{project.id}
+                </span>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href={project.projectLink}
-                  className=" hover:text-[#5B84B1] transition text-[#17171c]/70 dark:text-[#f2f2f2]"
+                  aria-label={`Acessar projeto ${project.projectname}`}
+                  className="inline-flex font-brains items-center gap-2 text-xs text-[#888891] transition hover:text-[#5B84B1] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5B84B1] dark:text-[#a1a1aa]"
                 >
-                  <ExternalLink absoluteStrokeWidth size={18} />
+                  Ver projeto
+                  <ExternalLink aria-hidden="true" size={16} />
                 </a>
               </div>
-              <div className="p-6 flex flex-col gap-4 bg-[#FFFFFF] dark:bg-linear-to-br from-[#151519]  to-[#101014]">
-                <span className="text-xs text-[#888891]/70 font-brains">
-                  <span className="dark:text-[#5B84B1]/40 text-[#5B84B1]/90">
-                    0{project.id}
-                  </span>{" "}
-                  // {project.projectname}
-                </span>
-                <div className="px-4 py-5 rounded-xl bg-[#EAF2FB] dark:bg-[#18181B] text-center ">
-                  {project.projectImage ? (
-                    <img
-                      src={project.projectImage}
-                      alt={project.projectname}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <span className="text-xs text-[#888891]/40  font-brains">
-                      {"<Preview />"}
-                    </span>
-                  )}
-                </div>
-              </div>
 
-              <div className="p-6 h-full flex flex-col gap-4 rounded-b-xl bg-[#FFFFFF] dark:bg-[#101014]">
-                <h2 className="text-lg transition text-[#17171c] dark:text-[#f2f2f2] group-hover:text-[#5B84B1] font-brains font-bold ">
+              <div className="space-y-2">
+                <h3 className="font-brains text-lg font-bold text-[#17171c] transition group-hover:text-[#5B84B1] dark:text-[#f2f2f2]">
                   {project.projectname}
-                </h2>
-                <p className="text-sm text-[#888891] font-inter max-w-md">
+                </h3>
+                <p className="font-inter text-sm leading-relaxed text-[#888891]">
                   {project.projectDescription}
                 </p>
-
-                <div className="flex flex-wrap gap-2 items-center ">
-                  {project.projectStack.map((stack) => (
-                    <span
-                      key={stack}
-                      className="dark:text-[#f2f2f2] text-[#17171c] hover:bg-black/10 dark:hover:bg-[#222226]/40 transition py-1.5 px-4 rounded-full bg-[#EAEAEC] dark:bg-[#222226] text-xs cursor-default font-brains font-bold"
-                    >
-                      {stack}
-                    </span>
-                  ))}
-                </div>
               </div>
-            </div>
+
+              <div className="mt-auto flex flex-wrap gap-2">
+                {project.projectStack.slice(0, 4).map((stack) => (
+                  <span
+                    key={stack}
+                    className="rounded-full bg-[#EAEAEC] px-2.5 py-1 font-brains text-[10px] font-bold text-[#17171c] dark:bg-[#1A1A1F] dark:text-white"
+                  >
+                    {stack}
+                  </span>
+                ))}
+                {project.projectStack.length > 4 && (
+                  <span className="self-center font-brains text-xs text-[#888891]">
+                    +{project.projectStack.length - 4}
+                  </span>
+                )}
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>
