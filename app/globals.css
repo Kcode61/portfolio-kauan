@@ -16,3 +16,23 @@
 *::after {
   cursor: none !important;
 }
+
+::view-transition-old(root) {
+  animation: none;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  animation: reveal 800ms ease-in-out both;
+  z-index: 2;
+}
+
+@keyframes reveal {
+  from {
+    clip-path: circle(0 at 0% 100%);
+  }
+
+  to {
+    clip-path: circle(150vmax at 0% 100%);
+  }
+}

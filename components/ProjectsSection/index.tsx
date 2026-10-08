@@ -120,45 +120,8 @@ export function ProjectsSection() {
               }}
               className="group flex h-full flex-col items-start gap-4 rounded-xl border border-[#F1F1F3] bg-white px-5 py-8 transition duration-300 ease-in-out hover:border-[#5B84B1]/30 dark:border-[#1B1B20] dark:bg-[#101014]"
             >
-              <div className="flex w-full items-center justify-between gap-4">
-                <span className="font-brains text-xs text-[#5B84B1]">
-                  projeto.0{project.id}
-                </span>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href={project.projectLink}
-                  aria-label={`Acessar projeto ${project.projectname}`}
-                  className="inline-flex font-brains items-center gap-2 text-xs text-[#888891] transition hover:text-[#5B84B1] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5B84B1] dark:text-[#a1a1aa]"
-                >
-                  Ver projeto
-                  <ExternalLink aria-hidden="true" size={16} />
-                </a>
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="font-brains text-lg font-bold text-[#17171c] transition group-hover:text-[#5B84B1] dark:text-[#f2f2f2]">
-                  {project.projectname}
-                </h3>
-                <p className="font-inter text-sm leading-relaxed text-[#888891]">
-                  {project.projectDescription}
-                </p>
-              </div>
-
-              <div className="mt-auto flex flex-wrap gap-2">
-                {project.projectStack.slice(0, 4).map((stack) => (
-                  <span
-                    key={stack}
-                    className="rounded-full bg-[#EAEAEC] px-2.5 py-1 font-brains text-[10px] font-bold text-[#17171c] dark:bg-[#1A1A1F] dark:text-white"
-                  >
-                    {stack}
-                  </span>
-                ))}
-                {project.projectStack.length > 4 && (
-                  <span className="self-center font-brains text-xs text-[#888891]">
-                    +{project.projectStack.length - 4}
-                  </span>
-                )}
+              <div className="flex flex-col gap-4">
+                <div className="flex justify-between"></div>
               </div>
             </motion.article>
           ))}

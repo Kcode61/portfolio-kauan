@@ -2,7 +2,7 @@
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-
+import { flushSync } from "react-dom";
 export function Header() {
   const [isopen, setisopen] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -12,6 +12,22 @@ export function Header() {
     setMounted(true);
   }, []);
 
+  async function toggleTheme() {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+
+    if (!document.startViewTransition) {
+      setTheme(nextTheme);
+      return;
+    }
+
+    const transition = document.startViewTransition(() => {
+      flushSync(() => {
+        setTheme(nextTheme);
+      });
+    });
+
+    await transition.ready;
+  }
   if (!mounted) return null;
   return (
     <>
@@ -58,7 +74,7 @@ export function Header() {
             </a>
 
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={toggleTheme}
               className="dark:text-white text-[#17171c]  p-2 rounded-full transition ease-duration-300 hover:scale-95 duration-300  hover:bg-[#E2E8F0] dark:hover:bg-[#222226] "
             >
               {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
@@ -102,10 +118,7 @@ export function Header() {
             Contato
           </a>
 
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="text-[#888891]"
-          >
+          <button onClick={toggleTheme} className="text-[#888891]">
             {theme === "dark" ? (
               <div className="flex gap-2  font-poppins text-sm font-medium  items-center">
                 <Moon size={18} className="text-[#17171c] dark:text-white" />

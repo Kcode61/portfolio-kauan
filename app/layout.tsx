@@ -35,7 +35,12 @@ export default function RootLayout({
         cz-shortcut-listen="true"
         className={`antialiased  ${inter.variable} ${jetbrains.variable} ${poppins.variable}`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange={false}
+        >
           <CustomCursor />
           {children}
         </ThemeProvider>
