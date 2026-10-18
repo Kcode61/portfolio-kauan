@@ -1,33 +1,54 @@
 "use client";
 import { motion } from "framer-motion";
+import { useLanguageStore } from "@/store/languageStore";
 
 const milestones = [
   {
-    date: "Setembro 2024",
-    title: "Primeiros passos",
-    description: "Comecei a estudar programação e construir minha base.",
+    date: { portuguese: "Setembro 2024", english: "September 2024" },
+    title: { portuguese: "Primeiros passos", english: "First steps" },
+    description: {
+      portuguese: "Comecei a estudar programação e construir minha base.",
+      english: "I started studying programming and building my foundation.",
+    },
   },
   {
-    date: "Maio 2025",
-    title: "Projetos reais",
-    description:
-      "Comecei a desenvolver projetos para resolver problemas reais.",
+    date: { portuguese: "Maio 2025", english: "May 2025" },
+    title: { portuguese: "Projetos reais", english: "Real-world projects" },
+    description: {
+      portuguese:
+        "Comecei a desenvolver projetos para resolver problemas reais.",
+      english: "I started building projects to solve real-world problems.",
+    },
   },
   {
-    date: "Setembro 2025",
-    title: "Estudos em back-end",
-    description:
-      "Passei a estudar e me aprofundar no desenvolvimento back-end.",
+    date: { portuguese: "Setembro 2025", english: "September 2025" },
+    title: { portuguese: "Estudos em back-end", english: "Back-end studies" },
+    description: {
+      portuguese:
+        "Passei a estudar e me aprofundar no desenvolvimento back-end.",
+      english:
+        "I began studying and deepening my knowledge of back-end development.",
+    },
   },
   {
-    date: "Maio 2026",
-    title: "Projetos para empresas",
-    description:
-      "Comecei a prospectar clientes e desenvolver projetos para empresas reais.",
+    date: { portuguese: "Maio 2026", english: "May 2026" },
+    title: {
+      portuguese: "Projetos para empresas",
+      english: "Projects for businesses",
+    },
+    description: {
+      portuguese:
+        "Comecei a prospectar clientes e desenvolver projetos para empresas reais.",
+      english:
+        "I started reaching out to clients and building projects for real businesses.",
+    },
   },
 ];
 
 export function AboutSection() {
+  const { language } = useLanguageStore();
+  const isPortuguese = language.portuguese === "Português";
+
   return (
     <section id="Sobre" className="py-16 px-4 bg-[#F3F6FA] dark:bg-[#09090B] ">
       <div className="max-w-6xl mx-auto">
@@ -40,7 +61,7 @@ export function AboutSection() {
               transition={{ duration: 0.7 }}
             >
               <span className=" font-brains text-sm text-[#5B84B1] ">
-                {"<Sobre />"}
+                {isPortuguese ? "<Sobre />" : "<About />"}
               </span>
             </motion.span>
             <motion.div
@@ -50,7 +71,7 @@ export function AboutSection() {
               transition={{ duration: 1, delay: 0.2 }}
             >
               <h2 className="font-poppins mt-4 mb-6 font-bold text-black dark:text-white text-4xl ">
-                Sobre mim
+                {isPortuguese ? "Sobre mim" : "About me"}
               </h2>
             </motion.div>
 
@@ -62,9 +83,9 @@ export function AboutSection() {
                 transition={{ duration: 1, delay: 0.4 }}
               >
                 <p className="text-md max-w-lg text-[#888891] font-inter ">
-                  Sou desenvolvedor front-end focado em criar interfaces
-                  modernas, responsivas e intuitivas. Busco unir design limpo,
-                  performance e experiência do usuário em cada projeto.
+                  {isPortuguese
+                    ? "Sou desenvolvedor front-end focado em criar interfaces modernas, responsivas e intuitivas. Busco unir design limpo, performance e experiência do usuário em cada projeto."
+                    : "I'm a front-end developer focused on creating modern, responsive, and intuitive interfaces. I bring clean design, performance, and user experience together in every project."}
                 </p>
               </motion.div>
               <motion.div
@@ -74,9 +95,9 @@ export function AboutSection() {
                 transition={{ duration: 1, delay: 0.6 }}
               >
                 <p className="text-md max-w-lg text-[#888891] font-inter ">
-                  Tenho experiência no desenvolvimento de aplicações web
-                  modernas, com atenção à responsividade, componentização e boas
-                  práticas de desenvolvimento.
+                  {isPortuguese
+                    ? "Tenho experiência no desenvolvimento de aplicações web modernas, com atenção à responsividade, componentização e boas práticas de desenvolvimento."
+                    : "I have experience building modern web applications, with a focus on responsiveness, componentization, and development best practices."}
                 </p>
               </motion.div>
               <motion.div
@@ -86,9 +107,9 @@ export function AboutSection() {
                 transition={{ duration: 1, delay: 0.8 }}
               >
                 <p className="text-md max-w-lg  text-[#888891] font-inter ">
-                  Trabalho principalmente com React, Next.js, TypeScript e
-                  Tailwind CSS, criando interfaces modernas e escaláveis para
-                  web.
+                  {isPortuguese
+                    ? "Trabalho principalmente com React, Next.js, TypeScript e Tailwind CSS, criando interfaces modernas e escaláveis para web."
+                    : "I mainly work with React, Next.js, TypeScript, and Tailwind CSS, building modern and scalable web interfaces."}
                 </p>
               </motion.div>
               <motion.div
@@ -123,7 +144,9 @@ export function AboutSection() {
                       </div>
                       <div className="pl-4 text-[#f2f2f4]">
                         <div>
-                          <span className="text-[#888891]">Nome:</span>{" "}
+                          <span className="text-[#888891]">
+                            {isPortuguese ? "Nome:" : "Name:"}
+                          </span>{" "}
                           <span className="text-[#21c45d]">"Kauan Moura"</span>,
                         </div>
                         <div>
@@ -134,7 +157,9 @@ export function AboutSection() {
                           ,
                         </div>
                         <div>
-                          <span className="text-[#888891]">Especialidade:</span>{" "}
+                          <span className="text-[#888891]">
+                            {isPortuguese ? "Especialidade:" : "Specialty:"}
+                          </span>{" "}
                           <span className="text-[#21c45d]">
                             "Front-end Moderno"
                           </span>
@@ -149,12 +174,12 @@ export function AboutSection() {
           </div>
           <div className="flex flex-col justify-center">
             <h3 className="mb-8 font-poppins text-2xl font-bold text-[#17171c] dark:text-[#f2f2f2]">
-              Minha trajetória
+              {isPortuguese ? "Minha trajetória" : "My journey"}
             </h3>
             <ol className="ml-2 border-l border-[#5B84B1]/40">
               {milestones.map((milestone, index) => (
                 <motion.li
-                  key={milestone.date}
+                  key={milestone.date.english}
                   initial={{ opacity: 0, x: 18 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -163,14 +188,20 @@ export function AboutSection() {
                 >
                   <span className="absolute -left-[5px] top-1.5 h-[9px] w-[9px] rounded-full bg-[#5B84B1] ring-4 ring-[#F3F6FA] dark:ring-[#09090B]" />
                   <time className="font-brains text-xs text-[#5B84B1]">
-                    {milestone.date}
+                    {isPortuguese
+                      ? milestone.date.portuguese
+                      : milestone.date.english}
                   </time>
                   <h4 className="mt-1 font-poppins text-lg font-semibold text-[#17171c] dark:text-[#f2f2f2]">
-                    {milestone.title}
+                    {isPortuguese
+                      ? milestone.title.portuguese
+                      : milestone.title.english}
                   </h4>
 
                   <p className="mt-1 max-w-md font-inter text-sm leading-6 text-[#888891]">
-                    {milestone.description}
+                    {isPortuguese
+                      ? milestone.description.portuguese
+                      : milestone.description.english}
                   </p>
                 </motion.li>
               ))}

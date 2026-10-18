@@ -1,27 +1,56 @@
 "use client";
 import { CodeXml, Gauge, LayoutTemplate, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguageStore } from "@/store/languageStore";
 
 export function SkillsSection() {
+  const { language } = useLanguageStore();
+  const isPortuguese = language.portuguese === "Português";
   const skillGroups = [
     {
-      title: "Interfaces modernas",
-      description:
-        "Criação de layouts responsivos, claros e visualmente consistentes para interfaces digitais.",
+      title: {
+        portuguese: "Interfaces modernas",
+        english: "Modern interfaces",
+      },
+      description: {
+        portuguese:
+          "Criação de layouts responsivos, claros e visualmente consistentes para interfaces digitais.",
+        english:
+          "Creating responsive, clear, and visually consistent layouts for digital interfaces.",
+      },
       icon: CodeXml,
-      tags: ["React", "Next.js", "Tailwind", "Responsividade"],
+      tags: ["React", "Next.js", "Tailwind"],
+      translatedTag: {
+        portuguese: "Responsividade",
+        english: "Responsive design",
+      },
     },
     {
-      title: "Componentização",
-      description:
-        "Estruturação de sistemas reutilizáveis, escaláveis e fáceis de manter em produção.",
+      title: { portuguese: "Componentização", english: "Componentization" },
+      description: {
+        portuguese:
+          "Estruturação de sistemas reutilizáveis, escaláveis e fáceis de manter em produção.",
+        english:
+          "Structuring reusable, scalable systems that are easy to maintain in production.",
+      },
       icon: LayoutTemplate,
-      tags: ["Design Systems", "Componentes", "TypeScript", "Acessibilidade"],
+      tags: ["Design Systems", "TypeScript"],
+      translatedTags: {
+        portuguese: ["Componentes", "Acessibilidade"],
+        english: ["Components", "Accessibility"],
+      },
     },
     {
-      title: "Performance e entrega",
-      description:
-        "Otimização de experiência, velocidade e conversão com foco em resultado real.",
+      title: {
+        portuguese: "Performance e entrega",
+        english: "Performance and delivery",
+      },
+      description: {
+        portuguese:
+          "Otimização de experiência, velocidade e conversão com foco em resultado real.",
+        english:
+          "Optimizing experience, speed, and conversion with a focus on real results.",
+      },
       icon: Rocket,
       tags: ["UX", "Performance", "SEO", "Conversão"],
     },
@@ -54,7 +83,7 @@ export function SkillsSection() {
             transition={{ duration: 0.7 }}
           >
             <span className="font-brains text-sm text-[#5B84B1]">
-              {"<Habilidades />"}
+              {isPortuguese ? "<Habilidades />" : "<Skills />"}
             </span>
           </motion.span>
 
@@ -65,7 +94,7 @@ export function SkillsSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h2 className="text-4xl font-bold font-poppins text-[#17171c] dark:text-white">
-              Habilidades
+              {isPortuguese ? "Habilidades" : "Skills"}
             </h2>
           </motion.div>
 
@@ -76,17 +105,28 @@ export function SkillsSection() {
             transition={{ duration: 0.7, delay: 0.4 }}
           >
             <p className="font-inter text-[#888891]">
-              Soluções front-end pensadas para experiência, clareza visual e
-              desempenho.
+              {isPortuguese
+                ? "Soluções front-end pensadas para experiência, clareza visual e desempenho."
+                : "Front-end solutions designed for experience, visual clarity, and performance."}
             </p>
           </motion.div>
         </div>
 
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillGroups.map(
-            ({ title, description, tags, icon: Icon }, index) => (
+            (
+              {
+                title,
+                description,
+                tags,
+                translatedTag,
+                translatedTags,
+                icon: Icon,
+              },
+              index,
+            ) => (
               <motion.div
-                key={title}
+                key={title.english}
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -103,10 +143,12 @@ export function SkillsSection() {
 
                 <div className="space-y-2">
                   <p className="text-[#17171c] dark:text-[#f2f2f2] text-lg font-brains font-bold">
-                    {title}
+                    {isPortuguese ? title.portuguese : title.english}
                   </p>
                   <p className="text-sm text-[#888891] font-inter leading-relaxed">
-                    {description}
+                    {isPortuguese
+                      ? description.portuguese
+                      : description.english}
                   </p>
                 </div>
 
@@ -119,6 +161,25 @@ export function SkillsSection() {
                       {tag}
                     </span>
                   ))}
+                  {translatedTag && (
+                    <span className="px-2.5 py-1 rounded-full bg-[#EAEAEC] dark:bg-[#1A1A1F] text-[10px] font-brains text-[#17171c] dark:text-white font-bold">
+                      {isPortuguese
+                        ? translatedTag.portuguese
+                        : translatedTag.english}
+                    </span>
+                  )}
+                  {translatedTags &&
+                    (isPortuguese
+                      ? translatedTags.portuguese
+                      : translatedTags.english
+                    ).map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 rounded-full bg-[#EAEAEC] dark:bg-[#1A1A1F] text-[10px] font-brains text-[#17171c] dark:text-white font-bold"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                 </div>
               </motion.div>
             ),
@@ -133,7 +194,7 @@ export function SkillsSection() {
             transition={{ duration: 0.7, delay: 0.8 }}
           >
             <h2 className="text-sm text-[#888891] font-brains">
-              {"stack.current()"}
+              {isPortuguese ? "stack.atual()" : "stack.current()"}
             </h2>
           </motion.div>
 

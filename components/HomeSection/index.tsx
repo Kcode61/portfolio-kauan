@@ -4,74 +4,81 @@ import { ArrowUpRight, CodeXml, Link2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { HomeSpan } from "../HomeSpan";
-
-const sectionLinks = [
-  { label: "Sobre", href: "#Sobre" },
-  { label: "Habilidades", href: "#Habilidades" },
-  { label: "Projetos", href: "#Projetos" },
-  { label: "Contato", href: "#Contato" },
-];
-
-const codeRows = [
-  {
-    start: "const ",
-    startColor: "text-[#5B84B1]",
-    middle: "page",
-    middleColor: "text-[#7AA2D3]",
-    end: " = () => {",
-  },
-  {
-    start: "  return",
-    startColor: "text-[#5B84B1]",
-    middle: "",
-    middleColor: "",
-    end: " (",
-  },
-  {
-    start: "    <main ",
-    startColor: "text-[#7AA2D3]",
-    middle: '"portfolio"',
-    middleColor: "text-[#21c45d]",
-    end: ">",
-  },
-  {
-    start: "      <h1>",
-    startColor: "text-[#7AA2D3]",
-    middle: "Kauan Moura",
-    middleColor: "text-[#21c45d]",
-    end: "</h1>",
-  },
-  {
-    start: "      <",
-    startColor: "text-[#d9d7dc]",
-    middle: "Work",
-    middleColor: "text-[#7AA2D3]",
-    end: " />",
-  },
-  {
-    start: "    </main>",
-    startColor: "text-[#7AA2D3]",
-    middle: "",
-    middleColor: "",
-    end: "",
-  },
-  {
-    start: "  );",
-    startColor: "text-[#5B84B1]",
-    middle: "",
-    middleColor: "",
-    end: "",
-  },
-  {
-    start: "};",
-    startColor: "text-[#d9d7dc]",
-    middle: "",
-    middleColor: "",
-    end: "",
-  },
-];
+import { useLanguageStore } from "@/store/languageStore";
 
 export function HomeSection() {
+  const { language, setLanguage } = useLanguageStore();
+  const sectionLinks = [
+    { label: { portuguese: "Sobre", english: "About" }, href: "#Sobre" },
+    {
+      label: { portuguese: "Habilidades", english: "Skills" },
+      href: "#Habilidades",
+    },
+    {
+      label: { portuguese: "Projetos", english: "Projects" },
+      href: "#Projetos",
+    },
+    { label: { portuguese: "Contato", english: "Contact" }, href: "#Contato" },
+  ];
+
+  const codeRows = [
+    {
+      start: "const ",
+      startColor: "text-[#5B84B1]",
+      middle: "page",
+      middleColor: "text-[#7AA2D3]",
+      end: " = () => {",
+    },
+    {
+      start: "  return",
+      startColor: "text-[#5B84B1]",
+      middle: "",
+      middleColor: "",
+      end: " (",
+    },
+    {
+      start: "    <main ",
+      startColor: "text-[#7AA2D3]",
+      middle: '"portfolio"',
+      middleColor: "text-[#21c45d]",
+      end: ">",
+    },
+    {
+      start: "      <h1>",
+      startColor: "text-[#7AA2D3]",
+      middle: "Kauan Moura",
+      middleColor: "text-[#21c45d]",
+      end: "</h1>",
+    },
+    {
+      start: "      <",
+      startColor: "text-[#d9d7dc]",
+      middle: "Work",
+      middleColor: "text-[#7AA2D3]",
+      end: " />",
+    },
+    {
+      start: "    </main>",
+      startColor: "text-[#7AA2D3]",
+      middle: "",
+      middleColor: "",
+      end: "",
+    },
+    {
+      start: "  );",
+      startColor: "text-[#5B84B1]",
+      middle: "",
+      middleColor: "",
+      end: "",
+    },
+    {
+      start: "};",
+      startColor: "text-[#d9d7dc]",
+      middle: "",
+      middleColor: "",
+      end: "",
+    },
+  ];
   const [activeTab, setActiveTab] = useState<"code" | "links">("code");
   const text = "Kauan";
   const [displayText, setDisplayText] = useState("");
@@ -104,7 +111,9 @@ export function HomeSection() {
             transition={{ duration: 1 }}
           >
             <p className="text-xl font-inter mt-8 mb-2 font-medium text-[#626773] dark:text-[#a1a1aa]">
-              Olá, eu sou
+              {language.portuguese === "Português"
+                ? "Olá, eu sou"
+                : "Hello, i am"}
             </p>
           </motion.div>
 
@@ -144,8 +153,9 @@ export function HomeSection() {
             className="mb-8"
           >
             <p className="md:text-lg max-w-xl mx-auto lg:mx-0 text-[#626773] dark:text-[#a1a1aa] font-medium font-inter leading-relaxed">
-              Desenvolvedor front-end especializado em interfaces modernas,
-              responsivas e performáticas com React, Next.js e TypeScript.
+              {language.portuguese === "Português"
+                ? "Desenvolvedor front-end especializado em interfaces modernas, responsivas e performáticas com React, Next.js e TypeScript."
+                : "Specialized front-end developer in modern, responsive and performance interfaces such as React, Next.js and TypeScript."}
             </p>
           </motion.div>
 
@@ -176,14 +186,18 @@ export function HomeSection() {
               href="https://wa.me/5577999772234?text=gostaria%20de%20solicitar%20um%20or%C3%A7amento"
               className="w-full sm:w-auto py-3 px-7 font-inter shadow-[0px_0px_25px_rgba(58,95,132,0.18)] hover:bg-[#2D4F73] hover:scale-[0.98] transition ease duration-300 rounded-full bg-[#3A5F84] text-white font-inter text-sm font-bold flex items-center justify-center gap-2"
             >
-              Fale comigo
+              {language.portuguese === "Português"
+                ? "Fale comigo"
+                : "Contact me"}
               <ArrowUpRight size={16} />
             </a>
             <a
               href="#Projetos"
               className="w-full sm:w-auto py-3 font-inter px-7 hover:bg-[#3A5F84] hover:border-[#3A5F84] transition ease duration-300 border border-[#E5E5E8] dark:border-[#26262b] rounded-full bg-[#FAFAFA] dark:bg-[#09090b] hover:text-white text-[#17171c] dark:text-white font-inter text-sm font-bold"
             >
-              Ver projetos
+              {language.portuguese === "Português"
+                ? "Ver projetos"
+                : "See projects"}
             </a>
           </motion.div>
         </div>
@@ -221,7 +235,8 @@ export function HomeSection() {
                       : "text-white/60 hover:text-white"
                   }`}
                 >
-                  <CodeXml size={12} /> Código
+                  <CodeXml size={12} />{" "}
+                  {language.portuguese === "Português" ? "Código" : "Code"}
                 </button>
                 <button
                   id="home-links-tab"
@@ -282,7 +297,11 @@ export function HomeSection() {
                       href={link.href}
                       className="group flex min-h-12 items-center justify-between border-b border-white/10 font-brains text-xs text-[#d9d7dc] transition-colors last:border-0 hover:text-[#7AA2D3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#7AA2D3] sm:text-sm"
                     >
-                      <span>{link.label}</span>
+                      <span>
+                        {language.portuguese === "Português"
+                          ? link.label.portuguese
+                          : link.label.english}
+                      </span>
                       <ArrowUpRight
                         size={14}
                         className="text-[#5B84B1] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

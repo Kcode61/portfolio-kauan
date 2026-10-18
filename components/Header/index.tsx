@@ -1,4 +1,5 @@
 "use client";
+import { useLanguageStore } from "@/store/languageStore";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -7,11 +8,18 @@ export function Header() {
   const [isopen, setisopen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-
+  const { language, setLanguage } = useLanguageStore();
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  function toggleLanguage() {
+    setLanguage(
+      language.portuguese === "Português"
+        ? { portuguese: "English", english: "Português" }
+        : { portuguese: "Português", english: "English" },
+    );
+  }
   async function toggleTheme() {
     const nextTheme = theme === "dark" ? "light" : "dark";
 
@@ -52,27 +60,32 @@ export function Header() {
               href="#Sobre"
               className="relative font-medium text-sm font-poppins text-[#888891] dark:hover:text-[#f2f2f2] hover:text-[#17171c]   transition-colors  after:content-[''] after:absolute after:left-0 after:-bottom-1   after:h-[2px] after:w-0 after:bg-[#5B84B1]  after:transition-all after:duration-300  hover:after:w-full"
             >
-              Sobre
+              {language.portuguese === "Português" ? "Sobre" : "About"}
             </a>
             <a
               href="#Habilidades"
               className="relative  font-medium text-sm font-poppins text-[#888891] dark:hover:text-[#f2f2f2] hover:text-[#17171c]  transition-colors  after:content-[''] after:absolute after:left-0 after:-bottom-1   after:h-[2px] after:w-0 after:bg-[#5B84B1]  after:transition-all after:duration-300  hover:after:w-full"
             >
-              Habilidades
+              {language.portuguese === "Português" ? "Habilidades" : "Skills"}
             </a>
             <a
               href="#Projetos"
               className="relative text-sm font-medium font-poppins text-[#888891] dark:hover:text-[#f2f2f2] hover:text-[#17171c]  transition-colors  after:content-[''] after:absolute after:left-0 after:-bottom-1   after:h-[2px] after:w-0 after:bg-[#5B84B1]  after:transition-all after:duration-300  hover:after:w-full"
             >
-              Projetos
+              {language.portuguese === "Português" ? "Projetos" : "Projects"}
             </a>
             <a
               href="#Contato"
               className="relative  font-medium text-sm font-poppins text-[#888891] dark:hover:text-[#f2f2f2] hover:text-[#17171c]  transition-colors  after:content-[''] after:absolute after:left-0 after:-bottom-1   after:h-[2px] after:w-0 after:bg-[#5B84B1]  after:transition-all after:duration-300  hover:after:w-full"
             >
-              Contato
+              {language.portuguese === "Português" ? "Contato" : "Contact"}
             </a>
-
+            <button
+              className="relative  font-medium text-sm font-poppins text-[#888891] dark:hover:text-[#f2f2f2] hover:text-[#17171c]  transition-colors  after:content-[''] after:absolute after:left-0 after:-bottom-1   after:h-[2px] after:w-0 after:bg-[#5B84B1]  after:transition-all after:duration-300  hover:after:w-full"
+              onClick={toggleLanguage}
+            >
+              {language.portuguese}
+            </button>
             <button
               onClick={toggleTheme}
               className="dark:text-white text-[#17171c]  p-2 rounded-full transition ease-duration-300 hover:scale-95 duration-300  hover:bg-[#E2E8F0] dark:hover:bg-[#222226] "
@@ -97,37 +110,43 @@ export function Header() {
             href="#Sobre"
             className=" font-medium text-sm font-poppins text-[#888891] dark:hover:text-[#f2f2f2] hover:text-[#17171c]  transition-colors  "
           >
-            Sobre
+            {language.portuguese === "Português" ? "Sobre" : "About"}
           </a>
           <a
             href="#Habilidades"
             className="  font-medium text-sm font-poppins text-[#888891] dark:hover:text-[#f2f2f2] hover:text-[#17171c]  transition-colors  "
           >
-            Habilidades
+            {language.portuguese === "Português" ? "Habilidades" : "Skills"}
           </a>
           <a
             href="#Projetos"
             className=" text-sm font-medium font-poppins text-[#888891] dark:hover:text-[#f2f2f2] hover:text-[#17171c]  transition-colors "
           >
-            Projetos
+            {language.portuguese === "Português" ? "Projetos" : "Projects"}
           </a>
           <a
             href="#Contato"
             className="  font-medium text-sm font-poppins text-[#888891] dark:hover:text-[#f2f2f2] hover:text-[#17171c]  transition-colors  "
           >
-            Contato
+            {language.portuguese === "Português" ? "Contato" : "Contact"}
           </a>
-
+          <button className="text-[#888891]" onClick={toggleLanguage}>
+            {language.portuguese}
+          </button>
           <button onClick={toggleTheme} className="text-[#888891]">
             {theme === "dark" ? (
               <div className="flex gap-2  font-poppins text-sm font-medium  items-center">
                 <Moon size={18} className="text-[#17171c] dark:text-white" />
-                Modo Dark
+                {language.portuguese === "Português"
+                  ? "Modo dark"
+                  : "Dark mode"}
               </div>
             ) : (
               <div className="flex gap-2  font-poppins text-sm  font-medium items-center">
                 <Sun size={18} className="text-[#17171c] dark:text-white" />
-                Modo claro
+                {language.portuguese === "Português"
+                  ? "Modo light"
+                  : "Light mode"}
               </div>
             )}
           </button>

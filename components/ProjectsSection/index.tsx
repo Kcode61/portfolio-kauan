@@ -1,28 +1,36 @@
 "use client";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguageStore } from "@/store/languageStore";
 type Project = {
   id: number;
   projectname: string;
   projectLink: string;
-  projectDescription: string;
+  projectDescription: { portuguese: string; english: string };
   projectStack: string[];
 };
 
 export function ProjectsSection() {
+  const { language } = useLanguageStore();
+  const isPortuguese = language.portuguese === "Português";
   const ProjectList: Project[] = [
     {
       id: 1,
       projectname: "FlowBoard",
-      projectDescription:
-        "Um quadro Kanban focado em organização e interatividade.",
+      projectDescription: {
+        portuguese: "Um quadro Kanban focado em organização e interatividade.",
+        english: "A Kanban board focused on organization and interactivity.",
+      },
       projectLink: "https://flowboard-kanban-board.pages.dev",
       projectStack: ["Next.js", "React", "Tailwind", "TypeScript", "Zustand"],
     },
     {
       id: 2,
       projectname: "Pamofocus",
-      projectDescription: "Uma ferramenta de foco baseada na técnica Pomodoro.",
+      projectDescription: {
+        portuguese: "Uma ferramenta de foco baseada na técnica Pomodoro.",
+        english: "A focus tool based on the Pomodoro technique.",
+      },
       projectLink: "https://pamofocus.pages.dev",
       projectStack: [
         "HTML",
@@ -36,8 +44,10 @@ export function ProjectsSection() {
     {
       id: 3,
       projectname: "FlowFin",
-      projectDescription:
-        "Um dashboard para acompanhar e organizar suas finanças.",
+      projectDescription: {
+        portuguese: "Um dashboard para acompanhar e organizar suas finanças.",
+        english: "A dashboard to track and organize your finances.",
+      },
       projectLink: "https://flowfin-financeiro.vercel.app/",
       projectStack: [
         "React",
@@ -53,8 +63,12 @@ export function ProjectsSection() {
     {
       id: 4,
       projectname: "TechStore",
-      projectDescription:
-        "Uma loja de tecnologia com foco em navegação e experiência de compra.",
+      projectDescription: {
+        portuguese:
+          "Uma loja de tecnologia com foco em navegação e experiência de compra.",
+        english:
+          "A technology store focused on navigation and the shopping experience.",
+      },
       projectLink: "https://tech-store-three-virid.vercel.app/",
       projectStack: [
         "React",
@@ -82,7 +96,7 @@ export function ProjectsSection() {
             transition={{ duration: 0.7 }}
           >
             <span className=" font-brains text-sm text-[#5B84B1] ">
-              {"<Projetos />"}
+              {isPortuguese ? "<Projetos />" : "<Projects />"}
             </span>
           </motion.span>
           <motion.div
@@ -92,7 +106,7 @@ export function ProjectsSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h2 className="text-4xl font-bold font-poppins text-[#17171c] dark:text-white">
-              Projetos
+              {isPortuguese ? "Projetos" : "Projects"}
             </h2>
           </motion.div>
           <motion.div
@@ -102,7 +116,9 @@ export function ProjectsSection() {
             transition={{ duration: 0.7, delay: 0.4 }}
           >
             <p className="font-inter  text-[#888891]">
-              Projetos focados em experiência e design moderno e limpo.
+              {isPortuguese
+                ? "Projetos focados em experiência e design moderno e limpo."
+                : "Projects focused on experience and clean, modern design."}
             </p>
           </motion.div>
         </div>
@@ -144,31 +160,32 @@ export function ProjectsSection() {
                             <span className="h-5 w-14 rounded bg-[#E8F0F8] dark:bg-[#23384D]" />
                           </div>
                           <div className="grid min-h-0 flex-1 grid-cols-3 gap-2">
-                            {["A fazer", "Em progresso", "Concluído"].map(
-                              (column, columnIndex) => (
-                                <div
-                                  key={column}
-                                  className="rounded bg-[#F5F7F9] p-1.5 dark:bg-[#171C22] sm:p-2"
-                                >
-                                  <span className="block truncate text-[7px] font-semibold text-[#75808D] sm:text-[8px]">
-                                    {column}
-                                  </span>
-                                  <div className="mt-2 space-y-1.5">
-                                    {[0, 1].map((card) => (
-                                      <div
-                                        key={card}
-                                        className="rounded border border-[#E6EAF0] bg-white p-1.5 dark:border-[#2B333D] dark:bg-[#20262E]"
-                                      >
-                                        <span
-                                          className={`mb-1 block h-1 w-4 rounded ${columnIndex === 1 ? "bg-[#D6A75D]" : columnIndex === 2 ? "bg-[#78A68A]" : "bg-[#6F91B5]"}`}
-                                        />
-                                        <span className="block h-1 w-4/5 rounded bg-[#DDE2E8] dark:bg-[#414A55]" />
-                                      </div>
-                                    ))}
-                                  </div>
+                            {(isPortuguese
+                              ? ["A fazer", "Em progresso", "Concluído"]
+                              : ["To do", "In progress", "Done"]
+                            ).map((column, columnIndex) => (
+                              <div
+                                key={column}
+                                className="rounded bg-[#F5F7F9] p-1.5 dark:bg-[#171C22] sm:p-2"
+                              >
+                                <span className="block truncate text-[7px] font-semibold text-[#75808D] sm:text-[8px]">
+                                  {column}
+                                </span>
+                                <div className="mt-2 space-y-1.5">
+                                  {[0, 1].map((card) => (
+                                    <div
+                                      key={card}
+                                      className="rounded border border-[#E6EAF0] bg-white p-1.5 dark:border-[#2B333D] dark:bg-[#20262E]"
+                                    >
+                                      <span
+                                        className={`mb-1 block h-1 w-4 rounded ${columnIndex === 1 ? "bg-[#D6A75D]" : columnIndex === 2 ? "bg-[#78A68A]" : "bg-[#6F91B5]"}`}
+                                      />
+                                      <span className="block h-1 w-4/5 rounded bg-[#DDE2E8] dark:bg-[#414A55]" />
+                                    </div>
+                                  ))}
                                 </div>
-                              ),
-                            )}
+                              </div>
+                            ))}
                           </div>
                         </>
                       )}
@@ -181,7 +198,7 @@ export function ProjectsSection() {
                                 24:18
                               </span>
                               <span className="mt-1 block text-[8px] uppercase tracking-[0.12em] text-[#828B96]">
-                                foco
+                                {isPortuguese ? "foco" : "focus"}
                               </span>
                             </div>
                           </div>
@@ -200,19 +217,20 @@ export function ProjectsSection() {
                             <span className="h-5 w-12 rounded bg-[#E8F0F8] dark:bg-[#23384D]" />
                           </div>
                           <div className="grid grid-cols-3 gap-2">
-                            {["Saldo", "Entradas", "Saídas"].map(
-                              (label, item) => (
-                                <div
-                                  key={label}
-                                  className="rounded border border-[#E6EAF0] p-2 dark:border-[#2B333D]"
-                                >
-                                  <span className="block text-[7px] text-[#87919C] sm:text-[8px]">
-                                    {label}
-                                  </span>
-                                  <span className="mt-1 block h-1.5 w-4/5 rounded bg-[#405F7E] dark:bg-[#8EAAC6]" />
-                                </div>
-                              ),
-                            )}
+                            {(isPortuguese
+                              ? ["Saldo", "Entradas", "Saídas"]
+                              : ["Balance", "Income", "Expenses"]
+                            ).map((label, item) => (
+                              <div
+                                key={label}
+                                className="rounded border border-[#E6EAF0] p-2 dark:border-[#2B333D]"
+                              >
+                                <span className="block text-[7px] text-[#87919C] sm:text-[8px]">
+                                  {label}
+                                </span>
+                                <span className="mt-1 block h-1.5 w-4/5 rounded bg-[#405F7E] dark:bg-[#8EAAC6]" />
+                              </div>
+                            ))}
                           </div>
                           <div className="flex min-h-0 flex-1 items-end gap-1 border-b border-l border-[#E6EAF0] px-2 dark:border-[#2B333D]">
                             {[
@@ -267,7 +285,7 @@ export function ProjectsSection() {
                 <div className="mb-3 flex items-start justify-between gap-4">
                   <div>
                     <span className="mb-1 block font-brains text-[10px] uppercase tracking-[0.12em] text-[#7D8FA3]">
-                      Projeto 0{project.id}
+                      {isPortuguese ? "Projeto" : "Project"} 0{project.id}
                     </span>
                     <h3 className="font-poppins text-xl font-semibold text-[#17171c] dark:text-white">
                       {project.projectname}
@@ -277,14 +295,16 @@ export function ProjectsSection() {
                     href={project.projectLink}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`Abrir ${project.projectname}`}
+                    aria-label={`${isPortuguese ? "Abrir" : "Open"} ${project.projectname}`}
                     className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#DCE3EA] text-[#3A5F84] transition hover:border-[#3A5F84] hover:bg-[#3A5F84] hover:text-white dark:border-[#343B45] dark:text-[#9BB6D1] dark:hover:border-[#5B84B1]"
                   >
                     <ArrowUpRight size={17} />
                   </a>
                 </div>
                 <p className="mb-5 max-w-lg font-inter text-sm leading-relaxed text-[#747B85] dark:text-[#A1A1AA]">
-                  {project.projectDescription}
+                  {isPortuguese
+                    ? project.projectDescription.portuguese
+                    : project.projectDescription.english}
                 </p>
                 <div className="mt-auto flex flex-wrap gap-2 border-t border-[#EEF0F3] pt-4 dark:border-[#26262B]">
                   {project.projectStack.slice(0, 4).map((technology) => (
