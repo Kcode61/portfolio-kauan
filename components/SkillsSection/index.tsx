@@ -1,5 +1,5 @@
 "use client";
-import { CodeXml, Gauge, LayoutTemplate, Rocket } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguageStore } from "@/store/languageStore";
 
@@ -8,65 +8,77 @@ export function SkillsSection() {
   const isPortuguese = language.portuguese === "Português";
   const skillGroups = [
     {
-      title: {
-        portuguese: "Interfaces modernas",
-        english: "Modern interfaces",
-      },
+      number: "01",
+      title: { portuguese: "Front-end", english: "Front-end" },
       description: {
-        portuguese:
-          "Criação de layouts responsivos, claros e visualmente consistentes para interfaces digitais.",
-        english:
-          "Creating responsive, clear, and visually consistent layouts for digital interfaces.",
+        portuguese: "Interfaces responsivas e componentes para aplicações web.",
+        english: "Responsive interfaces and components for web applications.",
       },
-      icon: CodeXml,
-      tags: ["React", "Next.js", "Tailwind"],
-      translatedTag: {
-        portuguese: "Responsividade",
-        english: "Responsive design",
-      },
+      tags: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Tailwind",
+      ],
     },
     {
-      title: { portuguese: "Componentização", english: "Componentization" },
+      number: "02",
+      title: { portuguese: "Back-end", english: "Back-end" },
       description: {
         portuguese:
-          "Estruturação de sistemas reutilizáveis, escaláveis e fáceis de manter em produção.",
-        english:
-          "Structuring reusable, scalable systems that are easy to maintain in production.",
+          "Desenvolvimento de APIs e lógica de sistemas usando Java e Spring Boot.",
+        english: "API development and system logic using Java and Spring Boot.",
       },
-      icon: LayoutTemplate,
-      tags: ["Design Systems", "TypeScript"],
-      translatedTags: {
-        portuguese: ["Componentes", "Acessibilidade"],
-        english: ["Components", "Accessibility"],
-      },
+      tags: [
+        "Node.js",
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "PostgreSQL",
+        "Rest API",
+        "JWT",
+      ],
     },
     {
-      title: {
-        portuguese: "Performance e entrega",
-        english: "Performance and delivery",
-      },
+      number: "03",
+      title: { portuguese: "Interface e qualidade", english: "UI and quality" },
       description: {
         portuguese:
-          "Otimização de experiência, velocidade e conversão com foco em resultado real.",
+          "Design systems, experiência de uso e atenção aos detalhes visuais.",
         english:
-          "Optimizing experience, speed, and conversion with a focus on real results.",
+          "Design systems, user experience, and attention to visual detail.",
       },
-      icon: Rocket,
-      tags: ["UX", "Performance", "SEO", "Conversão"],
+      tags: [
+        "Figma",
+        "Design Systems",
+        "UX/UI",
+        "Acessibilidade",
+        "Responsividade",
+        "SEO",
+      ],
     },
-  ];
-
-  const currentStack = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Tailwind",
-    "Zustand",
-    "Git",
-    "Figma",
+    {
+      number: "04",
+      title: { portuguese: "Estado e ferramentas", english: "State and tools" },
+      description: {
+        portuguese:
+          "Gerenciamento de estado, versionamento e otimização da experiência.",
+        english:
+          "State management, version control, and experience optimization.",
+      },
+      tags: [
+        "Zustand",
+        "Performance",
+        "Docker",
+        "Git",
+        "Github",
+        "Vscode",
+        "IntelliJ IDEA",
+      ],
+    },
   ];
 
   return (
@@ -112,109 +124,54 @@ export function SkillsSection() {
           </motion.div>
         </div>
 
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillGroups.map(
-            (
-              {
-                title,
-                description,
-                tags,
-                translatedTag,
-                translatedTags,
-                icon: Icon,
-              },
-              index,
-            ) => (
+        <div className="mx-auto max-w-5xl py-14">
+          <div className="border-y border-[#DDE3E9] dark:border-[#26262B]">
+            {skillGroups.map(({ number, title, description, tags }, index) => (
               <motion.div
-                key={title.english}
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                key={number}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  ease: "easeOut",
-                  delay: index * 0.15,
-                }}
-                className="px-5 py-8 rounded-2xl flex-col gap-4 bg-[#FFFFFF] dark:bg-[#101014] border border-[#F1F1F3] dark:border-[#1B1B20] flex items-start group hover:border-[#5B84B1]/30 transition ease duration-300"
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                className="grid gap-5 border-b border-[#DDE3E9] py-7 last:border-b-0 dark:border-[#26262B] md:grid-cols-[minmax(220px,0.8fr)_1.5fr_auto] md:items-center md:gap-8 md:py-8"
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[#EAF2FB] dark:bg-[#162235] group-hover:bg-[#5B84B1]/20 text-[#5B84B1]">
-                  <Icon size={28} />
+                <div className="flex items-start gap-4">
+                  <span className="pt-1 font-brains text-xs text-[#5B84B1]">
+                    {number}
+                  </span>
+                  <div>
+                    <h3 className="font-poppins text-lg font-semibold text-[#17171c] dark:text-white">
+                      {isPortuguese ? title.portuguese : title.english}
+                    </h3>
+                    <p className="mt-1 max-w-xs font-inter text-sm leading-relaxed text-[#888891]">
+                      {isPortuguese
+                        ? description.portuguese
+                        : description.english}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="space-y-2">
-                  <p className="text-[#17171c] dark:text-[#f2f2f2] text-lg font-brains font-bold">
-                    {isPortuguese ? title.portuguese : title.english}
-                  </p>
-                  <p className="text-sm text-[#888891] font-inter leading-relaxed">
-                    {isPortuguese
-                      ? description.portuguese
-                      : description.english}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-x-2 gap-y-2 md:pl-2">
                   {tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-full bg-[#EAEAEC] dark:bg-[#1A1A1F] text-[10px] font-brains text-[#17171c] dark:text-white font-bold"
+                      className="border border-[#DDE3E9] bg-white/70 px-2.5 py-1 font-brains text-[11px] text-[#53687E] dark:border-[#30343B] dark:bg-[#101014] dark:text-[#A8BACD]"
                     >
                       {tag}
                     </span>
                   ))}
-                  {translatedTag && (
-                    <span className="px-2.5 py-1 rounded-full bg-[#EAEAEC] dark:bg-[#1A1A1F] text-[10px] font-brains text-[#17171c] dark:text-white font-bold">
-                      {isPortuguese
-                        ? translatedTag.portuguese
-                        : translatedTag.english}
-                    </span>
-                  )}
-                  {translatedTags &&
-                    (isPortuguese
-                      ? translatedTags.portuguese
-                      : translatedTags.english
-                    ).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 rounded-full bg-[#EAEAEC] dark:bg-[#1A1A1F] text-[10px] font-brains text-[#17171c] dark:text-white font-bold"
-                      >
-                        {tag}
-                      </span>
-                    ))}
                 </div>
-              </motion.div>
-            ),
-          )}
-        </div>
 
-        <div className="flex flex-col items-center gap-4">
-          <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            initial={{ opacity: 0, y: 30 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
-          >
-            <h2 className="text-sm text-[#888891] font-brains">
-              {isPortuguese ? "stack.atual()" : "stack.current()"}
-            </h2>
-          </motion.div>
-
-          <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            initial={{ opacity: 0, y: 30 }}
-            transition={{ duration: 0.7, delay: 1 }}
-          >
-            <div className="flex gap-3 flex-wrap justify-center items-center">
-              {currentStack.map((skill) => (
-                <span
-                  key={skill}
-                  className="py-2 px-4 rounded-full text-[#17171c] dark:text-[#f2f2f2] font-brains text-sm bg-[#E2E8F0] dark:bg-[#0A0A0E] hover:bg-[#5B84B1]/10 dark:hover:bg-[#5B84B1]/20 font-bold hover:text-[#5B84B1] transition ease duration-300"
+                <a
+                  href="#Projetos"
+                  className="inline-flex w-fit items-center gap-1 font-inter text-xs font-semibold text-[#3A5F84] transition-colors hover:text-[#1B2E4B] dark:text-[#9BB6D1] dark:hover:text-white"
                 >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+                  {isPortuguese ? "Ver projetos" : "View projects"}
+                  <ArrowUpRight size={14} />
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
