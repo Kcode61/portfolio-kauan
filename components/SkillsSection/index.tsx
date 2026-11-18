@@ -94,33 +94,31 @@ export function SkillsSection() {
             initial={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="font-brains text-sm text-[#5B84B1]">
-              {isPortuguese ? "<Habilidades />" : "<Skills />"}
-            </span>
+          <span className="font-brains text-sm text-[#5B84B1]">
+            {isPortuguese ? "<Habilidades />" : "<Skills />"}
+          </span>
           </motion.span>
-
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             initial={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h2 className="text-4xl font-bold font-poppins text-[#17171c] dark:text-white">
-              {isPortuguese ? "Habilidades" : "Skills"}
-            </h2>
+          <h2 className="text-4xl font-bold font-poppins text-[#17171c] dark:text-white">
+            {isPortuguese ? "Habilidades" : "Skills"}
+          </h2>
           </motion.div>
-
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             initial={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            <p className="font-inter text-[#888891]">
-              {isPortuguese
-                ? "Soluções front-end pensadas para experiência, clareza visual e desempenho."
-                : "Front-end solutions designed for experience, visual clarity, and performance."}
-            </p>
+          <p className="font-inter text-[#888891]">
+            {isPortuguese
+              ? "Soluções front-end pensadas para experiência, clareza visual e desempenho."
+              : "Front-end solutions designed for experience, visual clarity, and performance."}
+          </p>
           </motion.div>
         </div>
 

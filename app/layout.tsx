@@ -1,9 +1,11 @@
 // @ts-ignore: Ignore missing type declarations for global CSS import
 import "./globals.css";
 import type { Metadata } from "next";
-import { Poppins, JetBrains_Mono, Inter } from "next/font/google";
+import { Poppins, JetBrains_Mono, Inter, Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import CustomCursor from "@/components/CustomCursor";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="pt-br" className={`scroll-smooth font-sans ${geist.variable}`} suppressHydrationWarning>
       <body
         cz-shortcut-listen="true"
         className={`antialiased  ${inter.variable} ${jetbrains.variable} ${poppins.variable}`}
