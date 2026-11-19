@@ -5,7 +5,7 @@ import { Poppins, JetBrains_Mono, Inter, Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import CustomCursor from "@/components/CustomCursor";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -13,9 +13,51 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 export const metadata: Metadata = {
-  title: "Portfólio - Kauan Moura",
+  metadataBase: new URL("https://portfolio-kauan-beta.vercel.app"),
+  title: {
+    default: "Kauan Moura | Desenvolvedor Front-end",
+    template: "%s | Kauan Moura",
+  },
   description:
-    "Meu Portfólio pessoal onde mostro meus projetos e minha carreira",
+    "Portfólio de Kauan Moura, desenvolvedor front-end especializado em landing pages, interfaces modernas e experiências digitais.",
+  keywords: [
+    "Kauan Moura",
+    "Programador front-end",
+    "Programador backend",
+    "Programador fullstack",
+    "desenvolvedor front-end",
+    "desenvolvedor web",
+    "landing pages",
+    "React",
+    "Next.js",
+    "TypeScript",
+  ],
+  authors: [{ name: "Kauan Moura", url: "https://github.com/Kcode61" }],
+  creator: "Kauan Moura",
+  publisher: "Kauan Moura",
+  applicationName: "Portfólio Kauan Moura",
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName: "Portfólio - Kauan Moura",
+    title: "Kauan Moura | Desenvolvedor Front-end",
+    description:
+      "Conheça meus projetos e habilidades em desenvolvimento front-end.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Kauan Moura | Desenvolvedor Front-end",
+    description: "Portfólio com projetos e habilidades de Kauan Moura.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 export const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
@@ -32,7 +74,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={`scroll-smooth font-sans ${geist.variable}`} suppressHydrationWarning>
+    <html
+      lang="pt-br"
+      className={`scroll-smooth font-sans ${geist.variable}`}
+      suppressHydrationWarning
+    >
       <body
         cz-shortcut-listen="true"
         className={`antialiased  ${inter.variable} ${jetbrains.variable} ${poppins.variable}`}
