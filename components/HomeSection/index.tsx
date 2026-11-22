@@ -166,8 +166,8 @@ export function HomeSection() {
             >
               <p className="md:text-lg max-w-xl mx-auto lg:mx-0 text-[#626773] dark:text-[#a1a1aa] font-medium font-inter leading-relaxed">
                 {language.portuguese === "Português"
-                  ? "Desenvolvedor front-end especializado em interfaces modernas, responsivas e performáticas com React, Next.js e TypeScript."
-                  : "Specialized front-end developer in modern, responsive and performance interfaces such as React, Next.js and TypeScript."}
+                  ? "Construo interfaces modernas e performáticas que transformam ideias em produtos digitais claros e fáceis de usar."
+                  : "I build modern, high-performance interfaces that turn ideas into clear, easy-to-use digital products."}
               </p>
             </motion.div>
 

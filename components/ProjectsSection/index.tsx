@@ -1,313 +1,258 @@
 "use client";
+
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguageStore } from "@/store/languageStore";
+
 type Project = {
   id: number;
-  projectname: string;
+  projectName: string;
   projectLink: string;
-  projectDescription: { portuguese: string; english: string };
-  projectStack: string[];
+  screenshot?: string;
+  description: { portuguese: string; english: string };
+  challenge: { portuguese: string; english: string };
+  solution: { portuguese: string; english: string };
+  stack: string[];
 };
+
+const projects: Project[] = [
+  {
+    id: 1,
+    projectName: "TechStore",
+    projectLink: "https://tech-store-three-virid.vercel.app/",
+    screenshot: "/projects/techstore.png",
+    description: {
+      portuguese:
+        "Loja de tecnologia com catálogo, autenticação e jornada de compra completa.",
+      english:
+        "Technology store with catalog, authentication, and complete shopping journey.",
+    },
+    challenge: {
+      portuguese:
+        "Construir uma experiência de e-commerce clara em um catálogo amplo.",
+      english:
+        "Build a clear e-commerce experience across a broad catalog.",
+    },
+    solution: {
+      portuguese:
+        "Catálogo responsivo, área autenticada e integração entre front-end e API.",
+      english:
+        "Responsive catalog, authenticated area, and front-end/API integration.",
+    },
+    stack: ["React", "Next.js", "Spring Boot", "Java", "JWT", "Tailwind"],
+  },
+  {
+    id: 2,
+    projectName: "Pamofocus",
+    projectLink: "https://pamofocus.pages.dev",
+    description: {
+      portuguese:
+        "Ferramenta de foco baseada na técnica Pomodoro, com ciclos personalizáveis.",
+      english:
+        "Focus tool based on the Pomodoro technique, with customizable cycles.",
+    },
+    challenge: {
+      portuguese:
+        "Transformar sessões de estudo em ciclos claros, sem distrações.",
+      english:
+        "Turn study sessions into clear cycles without distractions.",
+    },
+    solution: {
+      portuguese:
+        "Timer interativo, estados de sessão e interface preparada para desktop e mobile.",
+      english:
+        "Interactive timer, session states, and an interface prepared for desktop and mobile.",
+    },
+    stack: ["React", "Next.js", "TypeScript", "Zustand", "Tailwind"],
+  },
+  {
+    id: 3,
+    projectName: "FlowBoard",
+    projectLink: "https://flowboard-kanban-board.pages.dev",
+    screenshot: "/projects/flowboard.png",
+    description: {
+      portuguese:
+        "Quadro Kanban interativo para organizar tarefas e acompanhar o progresso.",
+      english:
+        "Interactive Kanban board for organizing tasks and tracking progress.",
+    },
+    challenge: {
+      portuguese:
+        "Organizar tarefas com prioridades, múltiplos estados e uma experiência simples.",
+      english:
+        "Organize tasks with priorities, multiple states, and a simple experience.",
+    },
+    solution: {
+      portuguese:
+        "Interface responsiva com drag and drop, criação de colunas e persistência de estado.",
+      english:
+        "Responsive interface with drag and drop, column creation, and state persistence.",
+    },
+    stack: ["Next.js", "React", "TypeScript", "Zustand", "Tailwind"],
+  },
+  {
+    id: 4,
+    projectName: "FlowFin",
+    projectLink: "https://flowfin-financeiro.vercel.app/",
+    screenshot: "/projects/flowfin.png",
+    description: {
+      portuguese:
+        "Aplicação financeira para acompanhar entradas, despesas e visão geral do orçamento.",
+      english:
+        "Finance application for tracking income, expenses, and budget overview.",
+    },
+    challenge: {
+      portuguese:
+        "Apresentar dados financeiros de forma clara e segura.",
+      english:
+        "Present financial data clearly and securely.",
+    },
+    solution: {
+      portuguese:
+        "Dashboard com autenticação, API REST e organização de dados por categorias.",
+      english:
+        "Dashboard with authentication, REST API, and category-based data organization.",
+    },
+    stack: ["React", "Next.js", "Spring Boot", "Java", "JWT", "PostgreSQL"],
+  },
+];
 
 export function ProjectsSection() {
   const { language } = useLanguageStore();
   const isPortuguese = language.portuguese === "Português";
-  const ProjectList: Project[] = [
-    {
-      id: 1,
-      projectname: "FlowBoard",
-      projectDescription: {
-        portuguese: "Um quadro Kanban focado em organização e interatividade.",
-        english: "A Kanban board focused on organization and interactivity.",
-      },
-      projectLink: "https://flowboard-kanban-board.pages.dev",
-      projectStack: ["Next.js", "React", "Tailwind", "TypeScript", "Zustand"],
-    },
-    {
-      id: 2,
-      projectname: "Pamofocus",
-      projectDescription: {
-        portuguese: "Uma ferramenta de foco baseada na técnica Pomodoro.",
-        english: "A focus tool based on the Pomodoro technique.",
-      },
-      projectLink: "https://pamofocus.pages.dev",
-      projectStack: [
-        "HTML",
-        "React",
-        "Tailwind",
-        "TypeScript",
-        "Zustand",
-        "Next.js",
-      ],
-    },
-    {
-      id: 3,
-      projectname: "FlowFin",
-      projectDescription: {
-        portuguese: "Um dashboard para acompanhar e organizar suas finanças.",
-        english: "A dashboard to track and organize your finances.",
-      },
-      projectLink: "https://flowfin-financeiro.vercel.app/",
-      projectStack: [
-        "React",
-        "Spring Boot",
-        "Java",
-        "JWT",
-        "Tailwind",
-        "TypeScript",
-        "Zustand",
-        "Next.js",
-      ],
-    },
-    {
-      id: 4,
-      projectname: "TechStore",
-      projectDescription: {
-        portuguese:
-          "Uma loja de tecnologia com foco em navegação e experiência de compra.",
-        english:
-          "A technology store focused on navigation and the shopping experience.",
-      },
-      projectLink: "https://tech-store-three-virid.vercel.app/",
-      projectStack: [
-        "React",
-        "Spring Boot",
-        "Java",
-        "JWT",
-        "Tailwind",
-        "TypeScript",
-        "Zustand",
-        "Next.js",
-      ],
-    },
-  ];
+
   return (
     <section
       id="Projetos"
-      className="py-16 px-4 bg-[#F8F7FA] bg-[url('/backgroundbranco.png')] dark:bg-[#09090B] dark:bg-none"
+      className="bg-[#F8F7FA] px-4 py-20 dark:bg-[#09090B]"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-2xl flex flex-col gap-4 mx-auto text-center">
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-auto flex max-w-2xl flex-col gap-4 text-center">
           <motion.span
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            initial={{ opacity: 0, y: 30 }}
-            transition={{ duration: 0.7 }}
           >
-            <span className=" font-brains text-sm text-[#5B84B1] ">
+            <span className="font-brains text-sm text-[#5B84B1]">
               {isPortuguese ? "<Projetos />" : "<Projects />"}
             </span>
           </motion.span>
-          <motion.div
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            initial={{ opacity: 0, y: 30 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ delay: 0.1 }}
+            className="font-poppins text-4xl font-bold text-[#17171c] dark:text-white"
           >
-            <h2 className="text-4xl font-bold font-poppins text-[#17171c] dark:text-white">
-              {isPortuguese ? "Projetos" : "Projects"}
-            </h2>
-          </motion.div>
-          <motion.div
+            {isPortuguese ? "Projetos selecionados" : "Selected projects"}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            initial={{ opacity: 0, y: 30 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ delay: 0.2 }}
+            className="font-inter text-[#888891]"
           >
-            <p className="font-inter  text-[#888891]">
-              {isPortuguese
-                ? "Projetos focados em experiência e design moderno e limpo."
-                : "Projects focused on experience and clean, modern design."}
-            </p>
-          </motion.div>
+            {isPortuguese
+              ? "Produtos digitais construídos com atenção a produto, interface e engenharia."
+              : "Digital products built with attention to product, interface, and engineering."}
+          </motion.p>
         </div>
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {ProjectList.map((project, index) => (
+
+        <div className="grid grid-cols-1 gap-6 py-16 md:grid-cols-2">
+          {projects.map((project, index) => (
             <motion.article
               key={project.id}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                ease: "easeOut",
-                delay: index * 0.15,
-              }}
-              className="group flex h-full flex-col overflow-hidden rounded-xl border border-[#E6E7EB] bg-white transition duration-300 ease-in-out hover:-translate-y-1 hover:border-[#5B84B1]/50 hover:shadow-[0_18px_45px_rgba(27,46,75,0.10)] dark:border-[#26262B] dark:bg-[#101014] dark:hover:shadow-[0_18px_45px_rgba(0,0,0,0.25)]"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
+              className={`group flex h-full flex-col overflow-hidden border border-[#E6E7EB] bg-white transition duration-300 hover:-translate-y-1 hover:border-[#5B84B1]/50 hover:shadow-[0_18px_45px_rgba(27,46,75,0.10)] dark:border-[#26262B] dark:bg-[#101014] ${
+                index === 0 ? "md:col-span-2" : ""
+              }`}
             >
-              <div className="relative h-56 overflow-hidden border-b border-[#E6E7EB] bg-[#EEF3F8] p-5 dark:border-[#26262B] dark:bg-[#15191F] sm:h-64 sm:p-7">
-                <div className="absolute -right-12 -top-20 h-52 w-52 rounded-full bg-[#DCE8F4] dark:bg-[#1D2B3A]" />
-                <div className="absolute -bottom-24 left-8 h-48 w-48 rounded-full bg-[#E4ECF4] dark:bg-[#1A242E]" />
-                <div className="relative mx-auto flex h-full max-w-md flex-col overflow-hidden rounded-lg border border-[#D8E0E8] bg-white shadow-[0_12px_30px_rgba(27,46,75,0.12)] transition duration-500 group-hover:scale-[1.02] dark:border-[#343B45] dark:bg-[#0D1014]">
-                  <div className="flex h-8 shrink-0 items-center gap-1.5 border-b border-[#E6E7EB] px-3 dark:border-[#26262B]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#D7867A]" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#D9B66F]" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#83A88D]" />
-                    <span className="ml-2 h-3 w-2/5 rounded-sm bg-[#F1F3F6] dark:bg-[#20252C]" />
-                  </div>
-                  <div className="flex min-h-0 flex-1">
-                    <div className="hidden w-12 shrink-0 flex-col items-center gap-3 border-r border-[#E6E7EB] py-3 dark:border-[#26262B] sm:flex">
-                      <span className="h-5 w-5 rounded-md bg-[#3A5F84]" />
-                      <span className="h-4 w-4 rounded bg-[#E7EBF0] dark:bg-[#262C34]" />
-                      <span className="h-4 w-4 rounded bg-[#E7EBF0] dark:bg-[#262C34]" />
-                    </div>
-                    <div className="flex min-w-0 flex-1 flex-col gap-3 p-3 sm:p-4">
-                      {project.id === 1 && (
-                        <>
-                          <div className="flex items-center justify-between">
-                            <span className="h-3 w-24 rounded-sm bg-[#253B54] dark:bg-[#DDE6EF]" />
-                            <span className="h-5 w-14 rounded bg-[#E8F0F8] dark:bg-[#23384D]" />
-                          </div>
-                          <div className="grid min-h-0 flex-1 grid-cols-3 gap-2">
-                            {(isPortuguese
-                              ? ["A fazer", "Em progresso", "Concluído"]
-                              : ["To do", "In progress", "Done"]
-                            ).map((column, columnIndex) => (
-                              <div
-                                key={column}
-                                className="rounded bg-[#F5F7F9] p-1.5 dark:bg-[#171C22] sm:p-2"
-                              >
-                                <span className="block truncate text-[7px] font-semibold text-[#75808D] sm:text-[8px]">
-                                  {column}
-                                </span>
-                                <div className="mt-2 space-y-1.5">
-                                  {[0, 1].map((card) => (
-                                    <div
-                                      key={card}
-                                      className="rounded border border-[#E6EAF0] bg-white p-1.5 dark:border-[#2B333D] dark:bg-[#20262E]"
-                                    >
-                                      <span
-                                        className={`mb-1 block h-1 w-4 rounded ${columnIndex === 1 ? "bg-[#D6A75D]" : columnIndex === 2 ? "bg-[#78A68A]" : "bg-[#6F91B5]"}`}
-                                      />
-                                      <span className="block h-1 w-4/5 rounded bg-[#DDE2E8] dark:bg-[#414A55]" />
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </>
-                      )}
-                      {project.id === 2 && (
-                        <div className="flex flex-1 items-center justify-center gap-5">
-                          <div className="relative flex aspect-square h-28 items-center justify-center rounded-full border-[7px] border-[#E6EDF4] dark:border-[#263442] sm:h-32">
-                            <div className="absolute inset-0 rounded-full border-[7px] border-[#5B84B1] [clip-path:polygon(0_0,100%_0,100%_76%,0_76%)]" />
-                            <div className="text-center">
-                              <span className="block font-brains text-2xl font-semibold text-[#253B54] dark:text-white sm:text-3xl">
-                                24:18
-                              </span>
-                              <span className="mt-1 block text-[8px] uppercase tracking-[0.12em] text-[#828B96]">
-                                {isPortuguese ? "foco" : "focus"}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="hidden min-w-24 space-y-2 sm:block">
-                            <span className="block h-2 w-16 rounded bg-[#253B54] dark:bg-[#DDE6EF]" />
-                            <span className="block h-1.5 w-24 rounded bg-[#DDE3E9] dark:bg-[#343B45]" />
-                            <span className="block h-1.5 w-20 rounded bg-[#DDE3E9] dark:bg-[#343B45]" />
-                            <span className="mt-4 block h-7 w-20 rounded bg-[#3A5F84]" />
-                          </div>
-                        </div>
-                      )}
-                      {project.id === 3 && (
-                        <>
-                          <div className="flex items-center justify-between">
-                            <span className="h-3 w-20 rounded-sm bg-[#253B54] dark:bg-[#DDE6EF]" />
-                            <span className="h-5 w-12 rounded bg-[#E8F0F8] dark:bg-[#23384D]" />
-                          </div>
-                          <div className="grid grid-cols-3 gap-2">
-                            {(isPortuguese
-                              ? ["Saldo", "Entradas", "Saídas"]
-                              : ["Balance", "Income", "Expenses"]
-                            ).map((label, item) => (
-                              <div
-                                key={label}
-                                className="rounded border border-[#E6EAF0] p-2 dark:border-[#2B333D]"
-                              >
-                                <span className="block text-[7px] text-[#87919C] sm:text-[8px]">
-                                  {label}
-                                </span>
-                                <span className="mt-1 block h-1.5 w-4/5 rounded bg-[#405F7E] dark:bg-[#8EAAC6]" />
-                              </div>
-                            ))}
-                          </div>
-                          <div className="flex min-h-0 flex-1 items-end gap-1 border-b border-l border-[#E6EAF0] px-2 dark:border-[#2B333D]">
-                            {[
-                              35, 52, 42, 72, 58, 86, 66, 96, 78, 100, 72, 90,
-                            ].map((height, bar) => (
-                              <span
-                                key={bar}
-                                className="flex-1 rounded-t-sm bg-[#7D9DBD] dark:bg-[#52799F]"
-                                style={{ height: `${height}%` }}
-                              />
-                            ))}
-                          </div>
-                        </>
-                      )}
-                      {project.id === 4 && (
-                        <>
-                          <div className="flex items-center justify-between">
-                            <span className="font-poppins text-[10px] font-bold text-[#253B54] dark:text-white sm:text-xs">
-                              tech<span className="text-[#5B84B1]">store</span>
-                            </span>
-                            <div className="flex gap-2">
-                              <span className="h-3 w-8 rounded-sm bg-[#E7EBF0] dark:bg-[#262C34]" />
-                              <span className="h-3 w-3 rounded-full bg-[#E7EBF0] dark:bg-[#262C34]" />
-                            </div>
-                          </div>
-                          <div className="grid min-h-0 flex-1 grid-cols-3 gap-2">
-                            {[0, 1, 2].map((item) => (
-                              <div
-                                key={item}
-                                className="flex flex-col rounded border border-[#E6EAF0] p-1.5 dark:border-[#2B333D] sm:p-2"
-                              >
-                                <div className="flex flex-1 items-center justify-center rounded bg-[#F0F4F8] dark:bg-[#1A222B]">
-                                  <div
-                                    className={`h-9 w-9 rounded-xl border-2 ${item === 1 ? "border-[#A5B9CC] bg-[#DCE6EF]" : "border-[#BBC9D6] bg-white dark:bg-[#2B333D]"}`}
-                                  />
-                                </div>
-                                <span className="mt-1.5 block h-1 w-4/5 rounded bg-[#DDE2E8] dark:bg-[#414A55]" />
-                                <span className="mt-1 block h-1 w-2/5 rounded bg-[#7894B0]" />
-                              </div>
-                            ))}
-                          </div>
-                        </>
-                      )}
+              <div
+                className={`relative overflow-hidden border-b border-[#E6E7EB] bg-[#0D1014] dark:border-[#26262B] ${
+                  index === 0 ? "h-72 sm:h-96" : "h-64"
+                }`}
+              >
+                {project.screenshot ? (
+                  <img
+                    src={project.screenshot}
+                    alt={`${project.projectName} - ${isPortuguese ? "tela do projeto" : "project screen"}`}
+                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.015]"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_70%_30%,#1D2B3A,#101014_55%,#09090B)]">
+                    <div className="border border-white/10 bg-[#17171C] px-8 py-6 text-center shadow-2xl">
+                      <span className="font-brains text-xs text-[#7AA2D3]">
+                        // focus.timer
+                      </span>
+                      <div className="mt-3 font-poppins text-5xl font-bold text-white">
+                        25:00
+                      </div>
                     </div>
                   </div>
-                </div>
-                <span className="absolute bottom-3 right-4 font-brains text-[10px] text-[#8190A0] dark:text-[#778797]">
-                  0{project.id} / 04
-                </span>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#09090B]/25 to-transparent pointer-events-none" />
               </div>
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
-                <div className="mb-3 flex items-start justify-between gap-4">
+
+              <div className="flex flex-1 flex-col p-5 sm:p-7">
+                <div className="flex items-start justify-between gap-4">
                   <div>
-                    <span className="mb-1 block font-brains text-[10px] uppercase tracking-[0.12em] text-[#7D8FA3]">
+                    <span className="font-brains text-[10px] uppercase tracking-[0.12em] text-[#7D8FA3]">
                       {isPortuguese ? "Projeto" : "Project"} 0{project.id}
                     </span>
-                    <h3 className="font-poppins text-xl font-semibold text-[#17171c] dark:text-white">
-                      {project.projectname}
+                    <h3 className="mt-1 font-poppins text-2xl font-semibold text-[#17171c] dark:text-white">
+                      {project.projectName}
                     </h3>
                   </div>
                   <a
                     href={project.projectLink}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`${isPortuguese ? "Abrir" : "Open"} ${project.projectname}`}
-                    className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#DCE3EA] text-[#3A5F84] transition hover:border-[#3A5F84] hover:bg-[#3A5F84] hover:text-white dark:border-[#343B45] dark:text-[#9BB6D1] dark:hover:border-[#5B84B1]"
+                    aria-label={`${isPortuguese ? "Abrir" : "Open"} ${project.projectName}`}
+                    className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#DCE3EA] text-[#3A5F84] transition hover:border-[#3A5F84] hover:bg-[#3A5F84] hover:text-white dark:border-[#343B45] dark:text-[#9BB6D1]"
                   >
                     <ArrowUpRight size={17} />
                   </a>
                 </div>
-                <p className="mb-5 max-w-lg font-inter text-sm leading-relaxed text-[#747B85] dark:text-[#A1A1AA]">
+
+                <p className="mt-4 max-w-2xl font-inter text-sm leading-relaxed text-[#747B85] dark:text-[#A1A1AA]">
                   {isPortuguese
-                    ? project.projectDescription.portuguese
-                    : project.projectDescription.english}
+                    ? project.description.portuguese
+                    : project.description.english}
                 </p>
-                <div className="mt-auto flex flex-wrap gap-2 border-t border-[#EEF0F3] pt-4 dark:border-[#26262B]">
-                  {project.projectStack.slice(0, 4).map((technology) => (
+
+                <dl
+                  className={`mt-6 grid gap-5 border-t border-[#EEF0F3] pt-5 dark:border-[#26262B] ${
+                    index === 0 ? "sm:grid-cols-2" : ""
+                  }`}
+                >
+                  <div>
+                    <dt className="font-brains text-[10px] uppercase tracking-wider text-[#5B84B1]">
+                      {isPortuguese ? "Desafio" : "Challenge"}
+                    </dt>
+                    <dd className="mt-1 font-inter text-sm leading-6 text-[#747B85] dark:text-[#A1A1AA]">
+                      {isPortuguese
+                        ? project.challenge.portuguese
+                        : project.challenge.english}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-brains text-[10px] uppercase tracking-wider text-[#5B84B1]">
+                      {isPortuguese ? "Minha solução" : "My solution"}
+                    </dt>
+                    <dd className="mt-1 font-inter text-sm leading-6 text-[#747B85] dark:text-[#A1A1AA]">
+                      {isPortuguese
+                        ? project.solution.portuguese
+                        : project.solution.english}
+                    </dd>
+                  </div>
+                </dl>
+
+                <div className="mt-auto flex flex-wrap gap-2 border-t border-[#EEF0F3] pt-5 dark:border-[#26262B]">
+                  {project.stack.map((technology) => (
                     <span
                       key={technology}
                       className="rounded-sm bg-[#F2F5F8] px-2 py-1 font-brains text-[10px] text-[#53687E] dark:bg-[#1B222A] dark:text-[#A8BACD]"
@@ -315,11 +260,6 @@ export function ProjectsSection() {
                       {technology}
                     </span>
                   ))}
-                  {project.projectStack.length > 4 && (
-                    <span className="px-1 py-1 font-brains text-[10px] text-[#8B929B]">
-                      +{project.projectStack.length - 4}
-                    </span>
-                  )}
                 </div>
               </div>
             </motion.article>
