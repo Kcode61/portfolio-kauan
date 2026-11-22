@@ -48,11 +48,20 @@ export const metadata: Metadata = {
     title: "Kauan Moura | Desenvolvedor Front-end",
     description:
       "Conheça meus projetos e habilidades em desenvolvimento front-end.",
+    images: [
+      {
+        url: "/og-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Kauan Moura | Desenvolvedor Front-end",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Kauan Moura | Desenvolvedor Front-end",
     description: "Portfólio com projetos e habilidades de Kauan Moura.",
+    images: ["/og-banner.png"],
   },
   robots: {
     index: true,
