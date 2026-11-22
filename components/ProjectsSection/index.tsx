@@ -8,7 +8,6 @@ type Project = {
   id: number;
   projectName: string;
   projectLink: string;
-  screenshot?: string;
   description: { portuguese: string; english: string };
   challenge: { portuguese: string; english: string };
   solution: { portuguese: string; english: string };
@@ -20,7 +19,6 @@ const projects: Project[] = [
     id: 1,
     projectName: "TechStore",
     projectLink: "https://tech-store-three-virid.vercel.app/",
-    screenshot: "/projects/techstore.png",
     description: {
       portuguese:
         "Loja de tecnologia com catálogo, autenticação e jornada de compra completa.",
@@ -69,7 +67,6 @@ const projects: Project[] = [
     id: 3,
     projectName: "FlowBoard",
     projectLink: "https://flowboard-kanban-board.pages.dev",
-    screenshot: "/projects/flowboard.png",
     description: {
       portuguese:
         "Quadro Kanban interativo para organizar tarefas e acompanhar o progresso.",
@@ -94,7 +91,6 @@ const projects: Project[] = [
     id: 4,
     projectName: "FlowFin",
     projectLink: "https://flowfin-financeiro.vercel.app/",
-    screenshot: "/projects/flowfin.png",
     description: {
       portuguese:
         "Aplicação financeira para acompanhar entradas, despesas e visão geral do orçamento.",
@@ -176,20 +172,159 @@ export function ProjectsSection() {
                   index === 0 ? "h-72 sm:h-96" : "h-64"
                 }`}
               >
-                {project.screenshot ? (
-                  <img
-                    src={project.screenshot}
-                    alt={`${project.projectName} - ${isPortuguese ? "tela do projeto" : "project screen"}`}
-                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.015]"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_70%_30%,#1D2B3A,#101014_55%,#09090B)]">
-                    <div className="border border-white/10 bg-[#17171C] px-8 py-6 text-center shadow-2xl">
-                      <span className="font-brains text-xs text-[#7AA2D3]">
-                        // focus.timer
-                      </span>
-                      <div className="mt-3 font-poppins text-5xl font-bold text-white">
-                        25:00
+                {project.id === 1 && (
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_20%,#26384B,#11151B_48%,#090A0D)] p-4 sm:p-7">
+                    <div className="mx-auto h-full max-w-5xl overflow-hidden rounded-t-xl border border-white/10 bg-[#0B0D10] shadow-[0_25px_70px_rgba(0,0,0,.55)]">
+                      <div className="flex h-9 items-center justify-between border-b border-white/10 bg-[#15181D] px-4">
+                        <div className="flex items-center gap-1.5">
+                          <span className="h-2 w-2 rounded-full bg-[#D7867A]" />
+                          <span className="h-2 w-2 rounded-full bg-[#D9B66F]" />
+                          <span className="h-2 w-2 rounded-full bg-[#83A88D]" />
+                        </div>
+                        <div className="h-5 w-28 rounded-sm bg-white/[0.055]" />
+                        <div className="h-5 w-5 rounded-full bg-white/[0.08]" />
+                      </div>
+                      <div className="grid h-[calc(100%-36px)] grid-cols-[1fr_.72fr]">
+                        <div className="flex flex-col justify-center px-7 sm:px-12">
+                          <div className="mb-5 flex items-center gap-2">
+                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#4F78A6] font-poppins text-[10px] font-bold text-white">TS</span>
+                            <span className="font-poppins text-sm font-bold text-white">TechStore</span>
+                          </div>
+                          <span className="mb-3 font-brains text-[8px] uppercase tracking-[.22em] text-[#7AA2D3]">Curadoria 2026</span>
+                          <div className="max-w-sm font-poppins text-[27px] font-bold leading-[1.05] text-white sm:text-[42px]">
+                            Tecnologia que <span className="text-[#5680AD]">vale a pena.</span>
+                          </div>
+                          <div className="mt-4 h-1.5 w-[68%] rounded bg-white/18" />
+                          <div className="mt-2 h-1.5 w-[52%] rounded bg-white/12" />
+                          <div className="mt-5 flex gap-2">
+                            <div className="h-8 w-24 rounded-full bg-[#5680AD]" />
+                            <div className="h-8 w-20 rounded-full border border-white/15" />
+                          </div>
+                        </div>
+                        <div className="relative overflow-hidden border-l border-white/[0.07] bg-[linear-gradient(145deg,#252E39,#151920)]">
+                          <div className="absolute -right-14 -top-12 h-48 w-48 rounded-full border border-[#7AA2D3]/15" />
+                          <div className="absolute bottom-0 left-[12%] h-[78%] w-[76%] rotate-3 rounded-t-[24px] border border-white/10 bg-[linear-gradient(145deg,#DDE8F2,#778DA5)] p-3 shadow-2xl">
+                            <div className="h-full rounded-t-[16px] bg-[linear-gradient(155deg,#9FB5CB_0%,#586D82_55%,#242C35_56%,#151A20_100%)]">
+                              <div className="ml-[18%] mt-[18%] h-[54%] w-[64%] rotate-[18deg] rounded-xl border border-white/20 bg-[linear-gradient(135deg,#ECF3FA,#6E8196)] shadow-xl" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {project.id === 2 && (
+                  <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_50%_48%,#273550,#111827_55%,#090A0D)] p-5">
+                    <div className="absolute left-5 top-5 h-20 w-20 rounded-full border border-white/[0.04]" />
+                    <div className="flex h-full w-full max-w-lg flex-col rounded-xl border border-white/10 bg-[#10131A]/95 shadow-[0_22px_60px_rgba(0,0,0,.55)] backdrop-blur">
+                      <div className="flex h-10 items-center justify-between border-b border-white/[0.07] px-4">
+                        <span className="font-poppins text-[11px] font-semibold text-white/90">PamoFocus</span>
+                        <div className="flex items-center gap-3">
+                          <span className="h-3 w-3 rounded-full border border-[#7AA2D3]/60" />
+                          <span className="h-3 w-3 rounded-sm border border-white/15" />
+                        </div>
+                      </div>
+                      <div className="flex flex-1 flex-col items-center justify-center">
+                        <div className="mb-4 flex rounded-full border border-white/[0.06] bg-black/10 p-1">
+                          {["Focus", "Short Break", "Long Break"].map((tab) => (
+                            <span key={tab} className={`px-3 py-1.5 font-brains text-[7px] sm:px-4 ${tab === "Focus" ? "rounded-full bg-[#557FAF] text-white shadow-[0_4px_18px_rgba(85,127,175,.35)]" : "text-white/25"}`}>{tab}</span>
+                          ))}
+                        </div>
+                        <div className="relative flex h-36 w-36 items-center justify-center rounded-full border-[6px] border-[#2A3445] sm:h-40 sm:w-40">
+                          <div className="absolute inset-[-6px] rounded-full border-[6px] border-transparent border-t-[#628EBB] border-r-[#628EBB] rotate-[35deg]" />
+                          <div className="font-brains text-4xl font-semibold tracking-[.08em] text-white sm:text-5xl">25:00</div>
+                        </div>
+                        <div className="mt-4 flex items-center gap-2">
+                          <div className="flex h-8 w-20 items-center justify-center rounded-full bg-[#557FAF] text-[8px] font-bold text-white">
+                            <span className="mr-1.5 h-0 w-0 border-y-[4px] border-y-transparent border-l-[7px] border-l-white" />
+                            Start
+                          </div>
+                          <div className="h-8 w-8 rounded-full border border-white/10" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {project.id === 3 && (
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#242D38,#12161D_58%,#090A0D)] p-5 sm:p-8">
+                    <div className="mx-auto flex h-full max-w-xl overflow-hidden rounded-lg border border-white/10 bg-[#171B22] shadow-[0_20px_55px_rgba(0,0,0,.45)]">
+                      <div className="hidden w-14 shrink-0 flex-col items-center gap-5 border-r border-white/[0.07] bg-[#11141A] py-4 sm:flex">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[#557FAF] font-poppins text-[9px] font-bold text-white">F</span>
+                        {[0, 1, 2].map((item) => (
+                          <span key={item} className={`h-4 w-4 rounded ${item === 0 ? "bg-[#557FAF]/40" : "border border-white/10"}`} />
+                        ))}
+                      </div>
+                      <div className="min-w-0 flex-1 p-3 sm:p-5">
+                        <div className="mb-4 flex items-center justify-between">
+                          <div>
+                            <div className="h-2 w-16 rounded bg-[#557FAF]/70" />
+                            <div className="mt-2 h-4 w-28 rounded bg-white/85" />
+                          </div>
+                          <div className="h-7 w-7 rounded-full border border-white/10" />
+                        </div>
+                        <div className="grid h-[calc(100%-47px)] grid-cols-3 gap-2">
+                          {[
+                            ["A fazer", ["Explorar", "Criar tarefas"], "#718DA9"],
+                            ["Em progresso", ["Arrastar tarefas"], "#D4A960"],
+                            ["Concluído", ["Planejar fluxo"], "#78A77D"],
+                          ].map(([title, cards, color]) => (
+                            <div key={title as string} className="rounded-md border border-white/[0.055] bg-[#11151B] p-2">
+                              <div className="mb-2 flex items-center justify-between">
+                                <span className="text-[7px] font-semibold text-white/55 sm:text-[9px]">{title}</span>
+                                <span className="h-3 w-3 rounded-sm bg-white/[0.06]" />
+                              </div>
+                              {(cards as string[]).map((card) => (
+                                <div key={card} className="mb-2 rounded-md border border-white/[0.07] bg-[#1E232B] p-2">
+                                  <span className="mb-2 block h-1 w-3/4 rounded" style={{ backgroundColor: color as string }} />
+                                  <span className="block text-[7px] text-white/70 sm:text-[8px]">{card}</span>
+                                  <div className="mt-2 h-1 w-1/2 rounded bg-white/10" />
+                                </div>
+                              ))}
+                              <div className="mt-1 text-[7px] text-white/20">+ adicionar tarefa</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {project.id === 4 && (
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,#2A2718,#111318_62%,#090A0D)] p-5 sm:p-8">
+                    <div className="mx-auto h-full max-w-3xl overflow-hidden rounded-lg border border-white/10 bg-[#121419] shadow-[0_22px_60px_rgba(0,0,0,.5)]">
+                      <div className="flex h-10 items-center justify-between border-b border-white/[0.07] px-4">
+                        <div className="flex items-center gap-2">
+                          <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#E0B82F] font-poppins text-[9px] font-black text-[#111318]">F</span>
+                          <span className="font-poppins text-[10px] font-bold text-white">FlowFin</span>
+                        </div>
+                        <div className="flex gap-2">
+                          <span className="h-6 w-16 rounded-md border border-white/10" />
+                          <span className="h-6 w-6 rounded-full bg-[#E0B82F]" />
+                        </div>
+                      </div>
+                      <div className="grid h-[calc(100%-40px)] grid-cols-[.78fr_1.22fr] gap-4 p-4">
+                        <div className="flex flex-col justify-center">
+                          <span className="mb-3 h-5 w-24 rounded-full border border-[#E0B82F]/30 bg-[#E0B82F]/10" />
+                          <div className="font-poppins text-2xl font-bold leading-tight text-white sm:text-[30px]">
+                            Suas finanças, <span className="text-[#E0B82F]">sob controle.</span>
+                          </div>
+                          <div className="mt-4 h-1.5 w-[78%] rounded bg-white/15" />
+                          <div className="mt-2 h-1.5 w-[58%] rounded bg-white/10" />
+                          <div className="mt-5 h-8 w-28 rounded-md bg-[#E0B82F]" />
+                        </div>
+                        <div className="grid grid-cols-2 content-center gap-2">
+                          {[
+                            ["Receitas", "+ R$ 4.850"],
+                            ["Despesas", "- R$ 1.920"],
+                            ["Metas", "68%"],
+                            ["Saldo", "R$ 2.930"],
+                          ].map(([label, value]) => (
+                            <div key={label} className="h-[58px] rounded-md border border-white/[0.07] bg-white/[0.035] p-3 shadow-[inset_0_1px_rgba(255,255,255,.03)]">
+                              <div className="mb-2 h-1 w-8 rounded bg-[#E0B82F]/80" />
+                              <span className="block text-[7px] text-white/35">{label}</span>
+                              <span className="mt-1 block text-[9px] font-semibold text-white/85 sm:text-[11px]">{value}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
